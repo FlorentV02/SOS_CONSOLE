@@ -1,0 +1,10 @@
+/* card-telephone-background */
+
+#background-phone-1 {
+    background: url('../asset/images/telephone.jpg');
+    height: auto;
+}
+
+.phone-card .card-link {
+    width: 10rem;
+}

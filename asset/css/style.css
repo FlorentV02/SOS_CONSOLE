@@ -184,28 +184,28 @@ body {
     display: flex;
 }
 
-.card-group .card {
-    margin: 3rem;
+.choice-card .card {
+    margin: 2rem 0 2rem 0;
 }
 
-.card {
+.choice-card .card {
     flex-direction: initial;
 }
 
-.card .card-body span
+.choice-card .card .card-body span
     {
     background-color:rgba(0,0,0,0.8);
     }
 
-.card-body {
+.choice-card .card-body {
     border: 11px solid #00BFB2;
 }
 
-.card-link {
+.choice-card .card-link {
     width: 35rem;
 }
 
-.card-font {
+.choice-card .card-font {
     font-family: 'Playfair Display';
     font-style: normal;
     font-weight: 600;
@@ -214,7 +214,7 @@ body {
     color: #FFFFFF;
 }
 
-.card-title {
+.choice-card .card-title {
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
