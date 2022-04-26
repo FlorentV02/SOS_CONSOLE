@@ -1,6 +1,15 @@
 @font-face {
     font-family: "Playfair Display";
     src: url("./asset/font/playfair_display/static/PlayfairDisplay-Regular.ttf") format("tff");
+    src: url('/asset/font/playfair_display/static/PlayfairDisplay-Black.ttf') format("tff");
+    src: url('/asset/font/playfair_display/PlayfairDisplay-Italic-VariableFont_wght.ttf') format("tff");
+    src: url('/asset/font/playfair_display/static/PlayfairDisplay-Bold.ttf') format("tff");
+    src: url('/asset/font/playfair_display/static/PlayfairDisplay-ExtraBold.ttf') format("tff");
+    src: url('/asset/font/playfair_display/static/PlayfairDisplay-ExtraBoldItalic.ttf') format("tff");
+    src: url('/asset/font/playfair_display/static/PlayfairDisplay-Medium.ttf') format("tff");
+    src: url('/asset/font/playfair_display/static/PlayfairDisplay-SemiBold.ttf') format("tff");
+    src: url('/asset/font/playfair_display/static/PlayfairDisplay-BoldItalic.ttf') format("tff");
+    src: url('/asset/font/playfair_display/static/PlayfairDisplay-Italic.ttf') format("tff");   
    }
 
 /* All selector */
@@ -67,6 +76,20 @@ body {
 
 }
 
+/* recherche-btn */
+
+.btn-search {
+    background: rgba(0, 191, 178, 0.8);
+    border: 2px solid #5A594E;
+    box-sizing: border-box;
+    border-radius: 6px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-search:hover {
+    background: #5A594E;
+}
+
 
 /* Burger-trait */
 
@@ -83,7 +106,8 @@ body {
 
 #entete-text {
     position: relative;
-    top: 12rem;
+    top: 25rem;
+    color: #ffffff;
 }
 
 /* content */
@@ -103,6 +127,12 @@ body {
     color: #ffffff;
 }
 
+/* carousel-item */
+
+.carousel-item {
+    min-height: 600px;
+    height: 600px;
+}
 
 
 /* Image bloc */
