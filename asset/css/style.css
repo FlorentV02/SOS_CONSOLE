@@ -38,6 +38,10 @@ body {
     font-size: 48px;
 }
 
+.text-36 {
+    font-size: 36px;
+}
+
 /* font */
 
 .playfair {
@@ -53,18 +57,33 @@ body {
     position: fixed;
     width: 100%;
     z-index: 999;
+    top: 0;
 }
 
 /* Burger-menu */
 
+.navbar-toggler:focus {
+    background-color: white;
+
+}
 
 
 /* Burger-trait */
 
 .navbar-trait {
-    width: 19px;
+    width: 30px;
     border: 1px solid #000000;
-    
+    margin-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #003369;
+}
+
+/* image-entete */
+
+#entete-text {
+    position: relative;
+    top: 12rem;
 }
 
 /* content */
@@ -100,7 +119,7 @@ body {
 }
 
 #img-telephone {
-    background: url("../images/console.jpg");
+    background: url("../images/telephone.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
