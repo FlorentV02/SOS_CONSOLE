@@ -1,10 +1,53 @@
-/* card-telephone-background */
+/* telephone-background entente */
 
 #background-phone-1 {
     background: url('../asset/images/telephone.jpg');
     height: auto;
 }
 
-.phone-card .card-link {
-    width: 10rem;
+/* reglage background */
+
+#content {
+    padding: 5vw;
+}
+
+
+/* bloc phone */
+
+#phone-block {
+background: #F5F5F5;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+margin: 5vw 9vw 0vw 5vw;
+padding: 5vw 0 5vw 0;
+}
+
+/* seperation entre les images */
+
+.figure {
+    border: 0.2vw solid black;
+    justify-content: center;
+    padding: 2vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    min-width: 18vw;
+    width: 18vw;
+}
+
+/* taille image */
+
+.img {
+    width: 100%;
+    max-width: 14vw;
+    height: 14vw;
+}
+
+/* style caption */
+
+.caption-style {
+    font-size: 2vw;
+    text-align: center;
+    color: #000000;
+    position: relative;
 }

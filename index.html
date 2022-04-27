@@ -42,8 +42,8 @@
                   <a class="nav-link disabled">Disabled</a>
                 </li>
               </ul>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <form class="form-search-nav-bar d-flex">
+                <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil" aria-label="Search">
               <button class="btn btn-search btn-outline-success" type="submit">Search</button>
             </form>
           </div>
@@ -131,14 +131,14 @@
       </div>
 
       <div class="card-group justify-content-center choice-card">
-        <a class="card-link" href="telephone.html">
+        <a class="card-link card-bloc" href="telephone.html">
         <div class="card mr-1">
           <div class="card-body p-5 card-font img-choice" id="img-console">
               <h5 class="card-title mt-5 text-center playfair">Répération de console</h5>
           </div>
         </div>
       </a>
-      <a class="card-link" href="telephone.html">
+      <a class="card-link card-bloc" href="telephone.html">
         <div class="card ml-1">
           
             <div class="card-body p-5 card-font img-choice" id="img-telephone">
@@ -150,10 +150,11 @@
     </section>
     
     <footer id="footer" class="d-flex text-center align-items-center justify-content-center">
-      <ul id ="contact">
-        <li>Contactez nous !</li>
-        <li><img class="logo-contact" src="asset/images/icon/facebook.png" class="card-img-top" alt="..."> Notre page facebook</li>
-        <li><img class="logo-contact" src="asset/images/icon/mail.png"/>Laissez un message</li>
+      <ul id ="contact" class="playfair">
+        <li class="fw-bolder text-36">Contactez nous !</li>
+        <li><img class="logo-contact" src="asset/images/icon/facebook.png" class="card-img-top" alt="Facebook">
+          <a target="_blank" href="https://www.facebook.com/jeremy.verhoye.3" title="Facebook" class="link-nav-bar">Notre page facebook</a></li>
+        <li><img class="logo-contact" src="asset/images/icon/mail.png"/> Laissez un message</li>
         </ul>
       </footer>
     
