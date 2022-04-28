@@ -153,14 +153,14 @@ body {
         background: url(../images/IMG_20220425_162304.jpg);
     
         /* Set a specific height */
-        min-height: 765px;
+        min-height: 40vw;
     
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 21rem 0rem 21rem 0rem;
+        padding: 15rem 0vw 15rem 0vw;
     }
     
 
