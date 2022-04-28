@@ -1,0 +1,9 @@
+/* background-formulaire */
+
+#formulaire {
+    background: no-repeat content-box #FFFFFF;
+    border: 1px solid black;
+    margin: auto;
+    height: auto;
+    width: 50vw;
+}
