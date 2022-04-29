@@ -1,0 +1,150 @@
+/* New */
+
+#new {
+    background: #00BFB2;
+    color: #ffffff;
+}
+
+/* carousel-item */
+
+.carousel-item {
+    height: 40%;
+}
+
+
+/* choice-bloc */
+
+#choice {
+    margin-top: 3vw;
+}
+
+/* Image bloc */
+
+.img-choice {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 25rem;
+    height: 35rem;
+    background-position: center;
+}
+
+#img-console {
+
+    background: linear-gradient(0deg, rgba(60, 60, 60, 0.8), rgba(60, 60, 60, 0.8)), url('../images/console.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 25rem;
+    height: 35rem;
+    background-position: center;
+
+}
+
+#img-console:hover {
+
+    background: linear-gradient(0deg, rgba(60, 60, 60, 0), rgba(60, 60, 60, 0)), url('../images/console.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 25rem;
+    height: 35rem;
+    background-position: center;
+
+}
+
+#img-telephone {
+    background: linear-gradient(0deg, rgba(60, 60, 60, 0.8), rgba(60, 60, 60, 0.8)), url('../images/telephone.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 25rem;
+    height: 35rem;
+    background-position: center;
+
+}
+
+#img-telephone:hover {
+    background: linear-gradient(0deg, rgba(60, 60, 60, 0), rgba(60, 60, 60, 0)), url('../images/telephone.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 25rem;
+    height: 35rem;
+    background-position: center;
+
+}
+
+/* card */
+
+.card-group {
+    display: flex;
+}
+
+.choice-card .card {
+    margin: 2rem 1.2rem 2rem 0;
+}
+
+.choice-card .card {
+    flex-direction: initial;
+}
+
+.choice-card .card .card-body span
+    {
+    background-color:rgba(0,0,0,0.8);
+    }
+
+.choice-card .card-body {
+    border: 11px solid #00BFB2;
+}
+
+.choice-card .card-link {
+    width: 33rem;
+    margin-left: 0;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+.card-link:hover{
+    text-decoration: underline white;
+}
+
+.choice-card .card-font {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+.choice-card .card-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    /* identical to box height */
+    
+    text-align: center;
+    letter-spacing: 0.1em;
+    
+    color: #FFFFFF;
+}
+
+/* Media query */
+
+@media (max-width: 767.98px) { 
+
+    .card-group {
+        display:block;
+    }
+ }
+
+@media (max-width: 575.98px) { 
+
+    .card-group {
+        display:block;
+        margin-left: 22px;
+
+    }
+}
