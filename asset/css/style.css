@@ -160,6 +160,7 @@ body {
     
         /* Set a specific height */
         min-height: 40vw;
+
     
         /* Create the parallax scrolling effect */
         background-attachment: fixed;

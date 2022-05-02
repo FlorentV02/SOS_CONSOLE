@@ -82,7 +82,7 @@
 }
 
 .choice-card .card {
-    margin: 2rem 1.2rem 2rem 0;
+    margin: 2rem 0rem 2rem 0;
 }
 
 .choice-card .card {
@@ -99,10 +99,11 @@
 }
 
 .choice-card .card-link {
-    width: 33rem;
+    width: 35rem;
     margin-left: 0;
-    justify-content: space-around;
+    justify-content: space-evenly;
     text-decoration: none;
+    padding-left: 1vw;
 }
 
 .card-link:hover{
@@ -133,18 +134,24 @@
 
 /* Media query */
 
+@media (max-width: 991.98px) { 
+
+    .choice-card .card-link {
+
+        padding-left: 0;
+    }
+    
+ }
+
 @media (max-width: 767.98px) { 
 
     .card-group {
         display:block;
     }
+
  }
 
 @media (max-width: 575.98px) { 
 
-    .card-group {
-        display:block;
-        margin-left: 22px;
 
-    }
 }

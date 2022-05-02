@@ -5,4 +5,42 @@
     min-height: 1.5rem;
     padding-left: 1.5em;
     margin-bottom: 3.125rem !important;
+    font-size: 1rem;
+}
+
+#img-piece {
+    margin: 1vw 10vw 1vw 10vw;
+    min-width: 8rem;
+    width: 20vw;
+}
+
+#arrow {
+    position: absolute;
+    left: 12.54%;
+    right: 34.48%;
+    top: 27.68%;
+    bottom: 70.86%;
+
+    border: 6px solid #32699F;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: rotate(24.66deg);
+}
+
+@media (max-width: 767.98px) { 
+
+    .form-check {
+        font-size: 0.7rem
+    }
+
+    @media (max-width: 575.98px) { 
+
+        #img-piece {
+            margin: 1vw 2vw 1vw 2vw;
+
+        }
+        
+
+
+    }
 }
