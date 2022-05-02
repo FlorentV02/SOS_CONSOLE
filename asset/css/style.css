@@ -185,8 +185,21 @@ body {
 
 /* file d'ariane */ 
 
+/* cercle  */
+
+/* cercle vide */
+
 .circle-empty {
     background: rgba(0, 191, 178, 0.33);
+    width: 13vw;
+    height: 13vw;
+    border-radius: 50%;
+}
+
+/* cercle en cours */ 
+
+.circle-in-progess {
+    background: rgba(0, 191, 178, 1);
     width: 13vw;
     height: 13vw;
     border-radius: 50%;
@@ -196,6 +209,25 @@ body {
     border: 2px solid rgba(0, 191, 178, 0.33);
     height: 0;
     width: 14vw;
+}
+
+.trait-validate {
+    border: 2px solid rgba(0, 191, 178, 1);
+    height: 0;
+    width: 14vw;
+}
+
+/* symbole validé */
+
+.validate-1 {
+    
+    width: 48.84px;
+    height: 0px;
+    left: 333px;
+    top: 268.3px;
+    
+    border: 3px solid #FFFFFF;
+    transform: rotate(42deg);
 }
 
 
