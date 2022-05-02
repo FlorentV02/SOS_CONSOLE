@@ -1,0 +1,54 @@
+/* background-formulaire */
+
+#block-formulaire {
+    background: no-repeat content-box #FFFFFF;
+    border: 1px solid black;
+    margin: auto;
+    height: auto;
+    width: 60vw;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#formulaire {
+    padding: 0.8vw;
+}
+
+#devis {
+    min-height: 300px;
+}
+
+/* background-devis */
+
+.background-devis {
+    background: #00BFB2;
+    box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* trait */
+
+.separation-vertial-1 {
+    border: 1px solid #00BFB2;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.8);
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+}
+
+/* bloc devis */
+
+#devis {
+    padding: 2vw;
+}
+
+/* bloc-prix*/
+
+#bloc-prix {
+    padding-right: 1vw;
+    padding-left: 1vw;
+    width: 25vw;
+}
+
+#total {
+    padding-right: 15vw;
+}
