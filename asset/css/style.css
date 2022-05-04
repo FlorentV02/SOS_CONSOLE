@@ -12,6 +12,22 @@
     src: url('/asset/font/playfair_display/static/PlayfairDisplay-Italic.ttf') format("tff");   
 }
 
+@font-face {
+    font-family: "Source Sans pro";
+    src: url("../font/source_sans_pro/SourceSansPro-Black.ttf") format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-BlackItalic.ttf') format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-Bold.ttf') format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-ExtraLight.ttf') format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-ExtraLightItalic.ttf') format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-Italic.ttf') format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-Light.ttf') format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-LightItalic.ttf') format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-Regular.ttf') format("tff");
+    src: url('../font/source_sans_pro/SourceSansPro-SemiBold.ttf') format("tff");  
+    src: url('../font/source_sans_pro/SourceSansPro-SemiBoldItalic.ttf') format("tff");   
+ 
+}
+
 /* All selector */
 
 * {
@@ -23,6 +39,10 @@
 
 body {
     background: #CDCDCD;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
 }
 
@@ -43,12 +63,16 @@ body {
 
 /* font-size */
 
-.text-48 {
-    font-size: 4vw;
+.text-2 {
+    font-size: 2rem;
 }
 
-.text-36 {
-    font-size: 2vw;
+.text-1 {
+    font-size: 1rem;
+}
+
+.text-0 {
+    font-size: 0.5rem;
 }
 
 /* font */
@@ -56,6 +80,11 @@ body {
 .playfair {
     font-family: 'Playfair Display', serif;
 }
+
+.source-pro-sans {
+    font-family: "Source Sans pro";
+}
+
 
 /* slider */
 
@@ -104,13 +133,13 @@ body {
 
 /* btn property */
 
-.link-btn a {
+.link-btn {
     text-decoration: none;
 }
 
 /* btn link:hover*/
 
-.link-btn:hover a {
+.link-btn:hover {
     color: #ffffff !important;
 }
 
@@ -162,7 +191,11 @@ body {
 
 #content {
     background-color: #ffffff;
+    background-image: url('../images/IMG_20220425_162312.jpg');
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100%;
     padding: 0 ;
     }
