@@ -52,7 +52,7 @@
       </nav>
     </header>
 
-    <section>
+    <section id="content" class="container pb-5">
         <div id ="header" class="text-center">
             <div id ="background-entete" class="playfair position-relative">
                 <div id="entete-text" class="playfair">
@@ -62,23 +62,37 @@
             </div>
         </div>
 
-        <div id="block-formulaire" class="mb-5">
+        <div>
+          <div class="d-flex align-items-center justify-content-center my-5">
+            <div class="circle-in-validate">
+  
+            </div>
+            <div class="trait-validate"></div>
+            <div class="circle-in-validate"></div>
+            <div class="trait-validate"></div>
+            <div class="circle-in-progess"></div>
+          </div>
+        </div>  
 
-            <p class="text-center">Votre récapitulatif</p>
+        <div id="block-formulaire">
+
+     
+
+            <p class="text-center my-5 playfair title-page">Votre récapitulatif</p>
 
             <div>
-                <div id="devis" class="d-flex mb-2 justify-content-center align-items-center">
+                <div id="devis-header" class="d-flex mb-3 mx-3 justify-content-around align-items-center">
                     <img class="align-items-center" 
                     src="asset/images/amazon-prime-day-deals-nintendo-switch-1562596166.webp" 
                     alt="" width="250" height="250">
-                    <div id="bloc-appareil" class="px-5">
-                        <p>Rappel appareil</p>
-                        <p>Appareil séléctionné</p>
+                    <div id="bloc-appareil" class="px-5 playfair font-18">
+                        <p class="color-green">Rappel appareil</p>
+                        <p class="color-green">Appareil séléctionné</p>
                     </div>
                 </div>
-                <div class="d-flex background-devis">
+                <div class="d-flex mx-3">
 
-                    <table class="table table-bordered">
+                    <table class="table table-striped table-bordered background-devis">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -99,8 +113,8 @@
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Total</td>
-                            <td>83€</td>
+                            <td class="fw-bold text-uppercase">Total</td>
+                            <td class="fw-bold font-weight-bold">83€</td>
                         </tr>
                         </tbody>
                     </table>
@@ -108,7 +122,9 @@
 
             </div>
 
-            <div>Téléchargez devis</div>
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn-devis btn-search btn-outline-success m-3">Téléchargez le devis</button>
+            </div>
         </div>
 
 

@@ -37,6 +37,10 @@ body {
     line-height: 4rem;
 }
 
+.color-green {
+    color: #00BFB2;
+}
+
 /* font-size */
 
 .text-48 {
@@ -98,6 +102,17 @@ body {
 
 }
 
+/* btn property */
+
+.link-btn a {
+    text-decoration: none;
+}
+
+/* btn link:hover*/
+
+.link-btn:hover a {
+    color: #ffffff !important;
+}
 
 /* recherche-btn */
 
@@ -149,7 +164,7 @@ body {
     background-color: #ffffff;
     background-size: cover;
     height: 100%;
-    padding: 0;
+    padding: 0 ;
     }
 
 
@@ -199,7 +214,18 @@ body {
 /* cercle en cours */ 
 
 .circle-in-progess {
+    background: rgba(0, 191, 178, 0.70);
+    width: 13vw;
+    height: 13vw;
+    border-radius: 50%;
+}
+
+.circle-in-validate {
     background: rgba(0, 191, 178, 1);
+    background-image: url('../images/icon/validate_icon.png');
+    background-position: center;
+    background-size: 8vw;
+    background-repeat: no-repeat;
     width: 13vw;
     height: 13vw;
     border-radius: 50%;
@@ -216,20 +242,6 @@ body {
     height: 0;
     width: 14vw;
 }
-
-/* symbole validé */
-
-.validate-1 {
-    
-    width: 48.84px;
-    height: 0px;
-    left: 333px;
-    top: 268.3px;
-    
-    border: 3px solid #FFFFFF;
-    transform: rotate(42deg);
-}
-
 
 /* Footer */
 
@@ -275,7 +287,7 @@ body {
         font-size: 14px;
     }
 
- }
+}
 
 @media (max-width: 575.98px) { 
 
