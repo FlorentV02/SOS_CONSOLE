@@ -136,6 +136,7 @@
 
       </div>
 
+
       <?php
       
       $query = $pdo->query("SELECT * FROM `appareil`");
@@ -146,6 +147,9 @@
       foreach ($resultat as $key => $variable)
       {
         print '<a class="card-link card-bloc" href="telephone.php">';
+        print '<style>#img-console {';
+        print "background: url(''asset/images/274332131_466244378576661_3517310084040936391_n.jpg'')";
+        print '}</style>';
         print '<div class="card mr-1">';
         print '<div class="card-body p-5 card-font img-choice" id="img-console">';
               print'<h5 class="card-title mt-5 text-center playfair">'.$resultat[$key]['name'].'</h5>';
