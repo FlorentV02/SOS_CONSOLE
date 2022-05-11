@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <link href="asset/css/style.css" rel="stylesheet">
-    <link href="asset/css/phone.css" rel="stylesheet">
-
-    <title>SOS CONSOLE</title>
-    <?php include 'bdd.php';?>
+<?php include 'includes/head.php';?>
+<link href="asset/css/phone.css" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <div id="background-body">
             <nav id="slider" class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html"><img src="./asset/images/icon/logo_sos_consoles.png"
+                    <a class="navbar-brand" href="index.php"><img src="./asset/images/icon/logo_sos_consoles.png"
                             alt="SOS_CONSOLE"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -103,11 +89,10 @@ $resultat = $query->fetchAll();
 
 //Afficher le résultat dans un tableau
 
-
 foreach ($resultat as $key => $variable)
 {
   print('<figure class="figure">');
-  print(' <a href="piece.html"><img id="img-phone-1" class="img" src="'.$resultat[$key]['image'].'" 
+  print(' <a href="piece.html"><img id="img-phone-1" class="img" src="asset/images/'.$resultat[$key]['image'].'" 
   class="figure-img img-fluid rounded" alt="..."></a>
   ');
   print(' <figcaption id="caption-phone-1" class="figure-caption caption-style">'.$resultat[$key]['name'].'

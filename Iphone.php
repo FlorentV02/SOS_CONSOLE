@@ -99,26 +99,12 @@
                 <?php 
 
 
-$phone = $pdo->query("SELECT class FROM `Iphone`");
+$sql = "SHOW TABLES FROM $dsn";
+$result = $pdo->query($sql);
 
-$resultat = $phone->fetchAll();
+$result = $sql->fetchAll();
 
-//Afficher le résultat dans un tableau
-
-
-foreach ($resultat as $key => $variable)
-{
-  print('<figure class="figure">');
-  print(' <a href="piece.html"><img id="img-phone-1" class="img" src="'.$resultat[$key]['image'].'" 
-  class="figure-img img-fluid rounded" alt="..."></a>
-  ');
-  print(' <figcaption id="caption-phone-1" class="figure-caption caption-style">'.$resultat[$key]['name'].'
-  </figcaption>
-  ');
-  print("</figure>
-  ");
-
-}
+echo "Table : {$sql[0]}\n";
 
 ?>
 

@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="asset/css/style.css" rel="stylesheet">
-    <link href="asset/css/accueil.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./asset/images/icon/logo_sos_consoles.png">
-    <title>SOS CONSOLE</title>
-    <?php include 'bdd.php';?>
+<?php include 'includes/head.php';?>
 </head>
   <body>
     <header>
       <div id="background-body">
         <nav id="slider" class="navbar navbar-expand-lg">
           <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="./asset/images/icon/logo_sos_consoles.png" alt="SOS_CONSOLE"></a>
+            <a class="navbar-brand" href="index.php"><img src="./asset/images/icon/logo_sos_consoles.png" alt="SOS_CONSOLE"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <div class="navbar-toggler-icon">
                 <div id="navbar-trait-1" class="navbar-trait"></div>
@@ -64,7 +54,7 @@
         </div>
       </div>
 
-      <?php include 'request_index.php'; ?>
+      <?php include 'includes/request_index.php'; ?>
 
 
       <div id ="new" class="playfair py-4 px-4">
@@ -134,32 +124,37 @@
 
         <p class="display-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum vulputate enim euismod, nec.</p>
 
-      </div>
-
-
       <?php
       
       $query = $pdo->query("SELECT * FROM `appareil`");
 
       $resultat = $query->fetchAll();
-
-      print '<div class="card-group justify-content-center choice-card">';
-      foreach ($resultat as $key => $variable)
       {
-        print '<a class="card-link card-bloc" href="telephone.php">';
-        print '<style>#img-console {';
-        print "background: url(''asset/images/274332131_466244378576661_3517310084040936391_n.jpg'')";
-        print '}</style>';
-        print '<div class="card mr-1">';
-        print '<div class="card-body p-5 card-font img-choice" id="img-console">';
-              print'<h5 class="card-title mt-5 text-center playfair">'.$resultat[$key]['name'].'</h5>';
-          print'</div>';
-        print'</div>';
-      print '</a>';
-    }
-      print'</div>'; 
 
+        ?>
+        <div class="card-group justify-content-center choice-card">
+          <?php
+        foreach ($resultat as $key => $variable)
+        {
+          echo $resultat[$key]['Id_Appareil'];
+
+          ?>
+           <a class="card-link card-bloc" href="<?php print $resultat[$key]['link'].'.php'; ?>">
+           <style>
+          <?php echo '.img-'.$resultat[$key]['Id_Appareil']; ?> 
+          { background: url(<?php echo'./asset/images/'.$resultat[$key]['image'];?>); }
+          </style>
+           <div class="card mr-1">
+           <div class="card-body p-5 card-font img-choice img-console img-1">
+                <h5 class="card-title mt-5 text-center playfair"><?php print $resultat[$key]['name']; ?></h5>
+            </div>
+          </div>
+         </a>
+        <?php 
+        }
       ?>
+        </div>
+  <?php }?>
 
     </section>
     
