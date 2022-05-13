@@ -18,41 +18,21 @@
     margin-top: 3vw;
 }
 
-/* Image bloc */
 
-.img-choice {
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 35vw;
-    height: 50vw;
-    background-position: center;
-}
-
-.img-console {
-
-    background: linear-gradient(0deg, rgba(60, 60, 60, 0.8), rgba(60, 60, 60, 0.8));
-    /*url('../images/console.jpg');*/
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 35vw;
-    height: 50vw;
-    background-position: center;
-
-}
 
 .img-console:hover {
 
-    background: linear-gradient(0deg, rgba(60, 60, 60, 0), rgba(60, 60, 60, 0)), url('../images/console.jpg');
+    background: linear-gradient(0deg, rgba(60, 60, 60, 0), rgba(60, 60, 60, 0));
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    width: 35vw;
-    height: 50vw;
     background-position: center;
+    opacity: 100%;
+
 
 }
+
+/*
 
 #img-telephone {
     background: linear-gradient(0deg, rgba(60, 60, 60, 0.8), rgba(60, 60, 60, 0.8));
@@ -75,8 +55,28 @@
     background-position: center;
 
 }
+*/
+
 
 /* card */
+
+/*card Image  */
+
+
+.bloc-card {
+    width: 100%;
+    -webkit-mask-image: -webkit-gradient(
+      linear, left top, right bottom, 
+      color-stop(1.00,rgba(60,60,60,0.8)));
+}
+
+.bloc-card:hover{
+    width: 100%;
+    -webkit-mask-image: -webkit-gradient(
+      linear, left top, right bottom, 
+      color-stop(1.00,  rgba(0,0,0,1)));
+}
+
 
 .card-group {
     display: flex;
@@ -147,14 +147,12 @@
 @media (max-width: 767.98px) { 
 
     .card-group {
-        flex-direction: column;
-
+        display: block;
     }
 
     .choice-card .card-link {
         width: 25rem;
         height: 25rem;
-        justify-content: center !important;
         margin-left: auto;
         margin-right: auto;
     }

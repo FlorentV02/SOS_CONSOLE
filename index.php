@@ -1,48 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php include 'includes/head.php';?>
+<?php require('includes/head.php');?>
+<link href="asset/css/accueil.css" rel="stylesheet">
+<title>SOS CONSOLES</title>
+
 </head>
   <body>
-    <header>
-      <div id="background-body">
-        <nav id="slider" class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img src="./asset/images/icon/logo_sos_consoles.png" alt="SOS_CONSOLE"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <div class="navbar-toggler-icon">
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-              </div>            
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-search-nav-bar form-search-page d-flex">
-                <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil" aria-label="Search">
-              <button class="btn btn-search btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </header>
+<?php require('includes/nav-bar.php'); ?>
 
     <section id="content" class="container">
       <div id ="header" class="text-center">
@@ -53,6 +17,8 @@
           </div> 
         </div>
       </div>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10065.547299198612!2d2.2252222!3d50.8980582!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1b10cc704128db50!2ssos-consoles%20-%20R%C3%A9paration%20consoles%26mobiles!5e0!3m2!1sfr!2sfr!4v1652353903008!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       <?php include 'includes/request_index.php'; ?>
 
@@ -132,23 +98,22 @@
       {
 
         ?>
-        <div class="card-group justify-content-center choice-card">
+        <div class="card-group justify-content-center choice-card py-2">
           <?php
         foreach ($resultat as $key => $variable)
         {
           echo $resultat[$key]['Id_Appareil'];
 
           ?>
-           <a class="card-link card-bloc" href="<?php print $resultat[$key]['link'].'.php'; ?>">
-           <style>
-          <?php echo '.img-'.$resultat[$key]['Id_Appareil']; ?> 
-          { background: url(<?php echo'./asset/images/'.$resultat[$key]['image'];?>); }
-          </style>
-           <div class="card mr-1">
-           <div class="card-body p-5 card-font img-choice img-console img-1">
-                <h5 class="card-title mt-5 text-center playfair"><?php print $resultat[$key]['name']; ?></h5>
+          <a class="card-link card-bloc pb-2" href="<?php print $resultat[$key]['link'].'.php'; ?>">
+          
+            <div class="card bg-dark text-white bloc-card">
+              <img class="card-img" src="<?php echo'./asset/images/'.$resultat[$key]['image'];?>" alt="<?php print $resultat[$key]['name'] ?>">
+              <div class="card-img-overlay">
+                <h5 class="card-title"><?php print $resultat[$key]['name'] ?></h5>
+              </div>
             </div>
-          </div>
+
          </a>
         <?php 
         }
@@ -158,21 +123,6 @@
 
     </section>
     
-    <footer id="footer" class="d-flex text-center align-items-center justify-content-center">
-      <ul id ="contact" class="playfair">
-        <li class="fw-bolder text-36">Contactez nous !</li>
-        <li><img class="logo-contact" src="asset/images/icon/facebook.png" class="card-img-top" alt="Facebook">
-          <a target="_blank" href="https://www.facebook.com/jeremy.verhoye.3" title="Facebook" 
-          class="link-nav-bar">Notre page facebook</a></li>
-        <li><img class="logo-contact" src="asset/images/icon/mail.png"/><a href="contact.html" 
-          title="Facebook" class="link-nav-bar">Laissez un message</a></li>
-        </ul>
-      </footer>
-    
-    <script src="./asset/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
-    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+   <?php require('includes/footer.php'); ?>
   </body>
 </html>

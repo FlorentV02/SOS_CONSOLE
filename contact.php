@@ -1,59 +1,12 @@
 <?php require('actions/send-note.php') ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="./asset/images/icon/logo_sos_consoles.png">
-    <link href="asset/css/style.css" rel="stylesheet">
+    <?php require('includes/head.php');?>
     <link href="asset/css/contact.css" rel="stylesheet">
-    <title>SOS CONSOLE</title>
+    <title>SOS CONSOLES</title>
 </head>
   <body>
-    <header>
-      <div id="background-body">
-        <nav id="slider" class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img src="./asset/images/icon/logo_sos_consoles.png" alt="SOS_CONSOLE"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <div class="navbar-toggler-icon">
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-              </div>            
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-search-nav-bar d-flex">
-                <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil" aria-label="Search">
-              <button class="btn btn-search btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+  <?php require('includes/nav-bar.php'); ?> 
     <section>
 
         <p id="send-note" class="text-center title-page display-4 my-5 playfair">Laissez un message</p>
@@ -107,24 +60,7 @@
         </div>
     </section>
     
-    <footer id="footer" class="d-flex text-center align-items-center justify-content-center">
-        <ul id ="contact" class="playfair">
-            <li class="fw-bolder text-36">Contactez nous !</li>
-            <li>
-                <img class="logo-contact" src="asset/images/icon/facebook.png" class="card-img-top" alt="Facebook">
-                <a target="_blank" href="https://www.facebook.com/jeremy.verhoye.3" title="Facebook" 
-            class="link-nav-bar">Notre page facebook</a>
-            </li>
-            <li>
-                <img class="logo-contact" src="asset/images/icon/mail.png"/>
-                <a href="contact.html" title="Facebook" class="link-nav-bar">Laissez un message</a>
-            </li>
-        </ul>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
-    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <?php require('includes/footer.php'); ?>
+
   </body>
 </html>

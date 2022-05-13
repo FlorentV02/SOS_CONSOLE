@@ -168,21 +168,28 @@ body {
     background-color: #003369;
 }
 
-/* link-nav-bar and footer */
+/* nav-item-nav-bar and footer */
 
-.link-nav-bar {
-    color: #ffffff;
+.item-bar a{
+    color: #ffffff !important;
     text-decoration: none;
 }
 
 /* link-nav-bar hover */
 
- .link-nav-bar:hover{
+ .item-bar a:hover{
      font-weight: bold;
-     color: #ffffff;
      text-decoration: underline;
 
  }
+
+/* Drop-item */
+
+.dropdown-menu .dropdown-item {
+    color: #00BFB2 !important;
+}
+
+/* Drop-item hover */
 
 /* content header*/
 
