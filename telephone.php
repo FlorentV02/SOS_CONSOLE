@@ -2,7 +2,7 @@
 <html lang="fr">
     <?php require('includes/head.php');?>
     <link href="asset/css/phone.css" rel="stylesheet">
-    <?php include 'bdd.php';?>
+    <?php include 'includes/bdd.php';?>
 </head>
 
 <body>
