@@ -27,6 +27,16 @@
                 </div>
             </div>
 
+            <?php 
+            
+            
+            //echo(($_POST['console']));
+            $test = $_POST['console']; 
+            echo($test);?>
+
+            
+
+
             <p class="text-center playfair title-page display-4">Choisir une marque de console</p>
 
             <form class="form-search-page d-flex">
@@ -38,27 +48,37 @@
             <div class="d-flex justify-content-center flex-wrap">
 
                 <?php 
-$query = $pdo->query("SELECT * FROM `marque_console`");
+
+function list_tables()
+{
+    $sql = 'SHOW TABLES';
+    if($this->is_connected)
+    {
+        $table = $this->pdo->query($sql);
+        return $table->fetchAll(PDO::FETCH_COLUMN);
+
+    }
+    return FALSE;
+}
+
+
+$query = $pdo->query("SELECT `name`, `mark` , `image_presentation` FROM `marque_console` JOIN `nintendo_switch` ON marque_console.Id_Marque_Console = nintendo_switch.Marque_Console_id WHERE `Marque_Console_id` = "echo($test);"");
+$query->bind_param($test);
 
 $resultat = $query->fetchAll();
 
 //Afficher le résultat dans un tableau
 
 foreach ($resultat as $key => $variable)
-{
-  print('<figure class="figure">');
-  print(' <a href="piece.html"><img id="img-phone-1" class="img" src="asset/images/'.$resultat[$key]['image'].'" 
-  class="figure-img img-fluid rounded" alt="..."></a>
-  ');
-  print(' <figcaption id="caption-phone-1" class="figure-caption caption-style">'.$resultat[$key]['name'].'
-  </figcaption>
-  ');
-  print("</figure>
-  ");
+{?>
+    <figure class="figure">
+    <a href="piece.php"><img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image_presentation']); ?>" 
+    class="figure-img img-fluid rounded" alt="..."></a>
+    <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultat[$key]['mark']. ' ' . $resultat[$key]['name']); ?>
+    </figcaption>
+    </figure>``
+<?php };?>
 
-}
-
-?>
 
             </div>
         </div>

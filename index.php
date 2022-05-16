@@ -17,12 +17,7 @@
           </div> 
         </div>
       </div>
-
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10065.547299198612!2d2.2252222!3d50.8980582!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1b10cc704128db50!2ssos-consoles%20-%20R%C3%A9paration%20consoles%26mobiles!5e0!3m2!1sfr!2sfr!4v1652353903008!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-      <?php include 'includes/request_index.php'; ?>
-
-
+      
       <div id ="new" class="playfair py-4 px-4">
         <p class="font-weight-bold text-center text-48">NEWS !</p>
         <p>

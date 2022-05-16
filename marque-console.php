@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <?php require('includes/head.php');?>
+<?php include 'includes/head.php';?>
     <link href="asset/css/phone.css" rel="stylesheet">
-    <?php require('includes/bdd.php;')?>
+    <title>SOS CONSOLES</title>
 </head>
-
 <body>
-<?php require('includes/nav-bar.php'); ?>
+    <?php require('includes/nav-bar.php'); ?>
 
     <section id="content" class="container">
         <div id="header" class="text-center">
@@ -30,7 +27,7 @@
                 </div>
             </div>
 
-            <p class="text-center playfair title-page display-4">Choisir un téléphone</p>
+            <p class="text-center playfair title-page display-4">Choisir une marque de console</p>
 
             <form class="form-search-page d-flex">
                 <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil"
@@ -41,29 +38,24 @@
             <div class="d-flex justify-content-center flex-wrap">
 
                 <?php 
+$query = $pdo->query("SELECT * FROM `marque_console`");
 
-$phone = $pdo->query("SELECT * FROM `marque_telephone`");
-
-$resultat = $phone->fetchAll();
+$resultat = $query->fetchAll();
 
 //Afficher le résultat dans un tableau
 
-
 foreach ($resultat as $key => $variable)
-{
-  print('<figure class="figure">');
-  print(' <a href="piece.html"><img id="img-phone-1" class="img" src="'.$resultat[$key]['image'].'" 
-  class="figure-img img-fluid rounded" alt="..."></a>
-  ');
-  print(' <figcaption id="caption-phone-1" class="figure-caption caption-style">'.$resultat[$key]['name'].'
-  </figcaption>
-  ');
-  print("</figure>
-  ");
+{?>
 
-}
+    <figure class="figure">
+    <a href="console.php"><img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image']); ?>" 
+    class="figure-img img-fluid rounded" alt="..."></a>
+    <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultat[$key]['name']); ?>
+    </figcaption>
+    </figure>
 
-?>
+<?php };?>
+
 
             </div>
         </div>
@@ -72,5 +64,4 @@ foreach ($resultat as $key => $variable)
     </section>
 
     <?php require('includes/footer.php'); ?>
-
 </html>
