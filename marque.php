@@ -18,8 +18,10 @@
         <div id="phone-block">
 
             <div>
-                <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center mx-2">
                     <div class="circle-in-progess"></div>
+                    <div class="trait-empty"></div>
+                    <div class="circle-empty"></div>
                     <div class="trait-empty"></div>
                     <div class="circle-empty"></div>
                     <div class="trait-empty"></div>
@@ -27,7 +29,7 @@
                 </div>
             </div>
 
-            <p class="text-center playfair title-page display-4">Choisir une marque de console</p>
+            <p class="text-center playfair title-page display-5">Choisir une marque de console</p>
 
             <form class="form-search-page d-flex">
                 <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil"
@@ -38,24 +40,31 @@
             <div class="d-flex justify-content-center flex-wrap">
 
                 <?php 
-$query = $pdo->query("SELECT * FROM `marque_console`");
-
-$resultat = $query->fetchAll();
-
+                $mark = $_POST['type']; 
+                $query = $pdo->query("
+                SELECT Id_Marque, marque, marque.image 
+                FROM `Marque` JOIN `Type_appareil`
+                ON type_appareil.id_type = marque.Id_type 
+                WHERE type_appareil.Id_type = $mark
+                ");
+                $resultat = $query->fetchAll();
 //Afficher le résultat dans un tableau
 
 foreach ($resultat as $key => $variable)
 {?>
 
+<form action="console.php" method="post">
+
     <figure class="figure">
-    <a href="console.php"><img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image']); ?>" 
-    class="figure-img img-fluid rounded" alt="..."></a>
-    <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultat[$key]['name']); ?>
+    <button type="submit" value="<?php echo($resultat[$key]['Id_Marque']); ?>" name="appareil"><img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image']); ?>" 
+    class="figure-img img-fluid rounded" alt="..."></button>
+    <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultat[$key]['marque']); ?>
     </figcaption>
     </figure>
+</form>
 
-<?php };?>
-
+<?php };
+?>
 
             </div>
         </div>

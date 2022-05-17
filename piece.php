@@ -65,10 +65,10 @@
     <div class="pt-5">
 
       <div>
-        <div class="d-flex align-items-center justify-content-center">
-          <div class="circle-in-validate">
-
-          </div>
+        <div class="d-flex align-items-center justify-content-center mx-2">
+          <div class="circle-in-validate"></div>
+          <div class="trait-validate"></div>
+          <div class="circle-in-validate"></div>
           <div class="trait-validate"></div>
           <div class="circle-in-progess"></div>
           <div class="trait-empty"></div>

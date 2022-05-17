@@ -87,34 +87,30 @@
 
       <?php
       
-      $query = $pdo->query("SELECT * FROM `appareil`");
+      $query = $pdo->query("SELECT * FROM `Type_appareil`");
 
       $resultat = $query->fetchAll();
-      {
-
-        ?>
+      {?>
+        <form action="marque.php" method="post">
         <div class="card-group justify-content-center choice-card py-2">
           <?php
         foreach ($resultat as $key => $variable)
         {
-          echo $resultat[$key]['Id_Appareil'];
-
           ?>
-          <a class="card-link card-bloc pb-2" href="<?php print $resultat[$key]['link'].'.php'; ?>">
-          
+          <button class="btn-no-style card-link card-bloc pb-2" name="type" type="submit" value="<?php echo($resultat[$key]['Id_type']); ?>">
             <div class="card bg-dark text-white bloc-card">
               <img class="card-img" src="<?php echo'./asset/images/'.$resultat[$key]['image'];?>" alt="<?php print $resultat[$key]['name'] ?>">
               <div class="card-img-overlay">
-                <h5 class="card-title"><?php print $resultat[$key]['name'] ?></h5>
+                <h5 class="card-title"><?php print $resultat[$key]['appelation'] ?></h5>
               </div>
             </div>
-
-         </a>
+          </button>
         <?php 
         }
-      ?>
-        </div>
-  <?php }?>
+        ?>
+          </div>
+        </form>
+<?php }?>
 
     </section>
     

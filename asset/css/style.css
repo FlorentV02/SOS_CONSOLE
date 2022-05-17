@@ -243,8 +243,8 @@ body {
 
 .circle-empty {
     background: rgba(0, 191, 178, 0.33);
-    width: 13vw;
-    height: 13vw;
+    width: calc(1rem + 12vw);
+    height: calc(1rem + 12vw);
     border-radius: 50%;
 }
 
@@ -252,8 +252,8 @@ body {
 
 .circle-in-progess {
     background: rgba(0, 191, 178, 0.70);
-    width: 13vw;
-    height: 13vw;
+    width: calc(1rem + 12vw);
+    height: calc(1rem + 12vw);
     border-radius: 50%;
 }
 
@@ -261,23 +261,23 @@ body {
     background: rgba(0, 191, 178, 1);
     background-image: url('../images/icon/validate_icon.png');
     background-position: center;
-    background-size: 8vw;
+    background-size: calc(1rem + 4vw);
     background-repeat: no-repeat;
-    width: 13vw;
-    height: 13vw;
+    width: calc(1rem + 12vw);
+    height: calc(1rem + 12vw);
     border-radius: 50%;
 }
 
 .trait-empty {
     border: 2px solid rgba(0, 191, 178, 0.33);
     height: 0;
-    width: 14vw;
+    width: calc(4rem + 8vw);
 }
 
 .trait-validate {
     border: 2px solid rgba(0, 191, 178, 1);
     height: 0;
-    width: 14vw;
+    width: calc(4rem + 8vw);
 }
 
 /* Footer */
@@ -302,6 +302,15 @@ body {
     width: 30px;
 }
 
+@media (max-width: 991.98px) { 
+
+    .choice-card .card-link {
+
+        padding-left: 0;
+    }
+    
+ }
+
 
 /* Media query */
 
@@ -316,7 +325,10 @@ body {
         font-size: 14px;
     }
 
+
 }
+
+
 
 @media (max-width: 575.98px) { 
 
@@ -328,6 +340,8 @@ body {
     .btn-search {
         font-size: 12px;
     }
+
+
 
 }
 

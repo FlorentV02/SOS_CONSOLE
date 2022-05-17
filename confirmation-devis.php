@@ -49,10 +49,10 @@
     <section>
 
       <div>
-        <div class="d-flex align-items-center justify-content-center my-5">
-          <div class="circle-in-validate">
-
-          </div>
+        <div class="d-flex align-items-center justify-content-center my-5 mx-2">
+          <div class="circle-in-validate"></div>
+          <div class="trait-validate"></div>
+          <div class="circle-in-validate"></div>
           <div class="trait-validate"></div>
           <div class="circle-in-validate"></div>
           <div class="trait-validate"></div>

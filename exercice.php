@@ -52,16 +52,13 @@ foreach ($resultat as $key => $variable)
     <figure class="figure">
     <input type="submit" value="<?php echo($resultat[$key]['Id_Marque_Console']); ?>" name="console"><img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image']); ?>" 
     class="figure-img img-fluid rounded" alt="..."></input>
-    <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultat[$key]['mark']); ?>
+    <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultat[$key]['mark_console']); ?>
     </figcaption>
     </figure>
 </form>
 
 <?php };
-
-
 ?>
-
 
             </div>
         </div>
