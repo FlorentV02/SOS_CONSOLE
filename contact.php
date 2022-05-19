@@ -1,4 +1,3 @@
-<?php require('actions/send-note.php') ?>
 <!DOCTYPE html>
 <html lang="fr">
     <?php require('includes/head.php');?>
@@ -11,8 +10,10 @@
 
         <p id="send-note" class="text-center title-page display-4 my-5 playfair">Laissez un message</p>
 
+        
+
         <div id="block-formulaire" class="mb-5">
-            <form id="formulaire" class="playfair" methode="POST" action="actions/send-note.php">
+            <form id="formulaire" class="playfair" method="post" action="actions/send-note.php">
 
             <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
 
@@ -21,20 +22,20 @@
                         <label for="Name" class="form-label">
                           Nom
                         </label>
-                        <input type="text" class="form-control form-style" id="Name" placeholder="Votre nom" aria-describedby="NameHelp">
+                        <input type="text" class="form-control form-style" id="Name" name="Name" placeholder="Votre nom" aria-describedby="NameHelp">
                     </div>
                     <div class="mb-3 px-3 text-center w-100">
                         <label for="FirstName" class="form-label">
                           Prénom <span class="text-danger font-weight-bold">*</span>
                         </label>
-                        <input type="text" class="form-control form-style" id="FirstName" placeholder="Votre prénom" aria-describedby="firstNameHelp">
+                        <input type="text" class="form-control form-style" id="FirstName" name="FirstName" placeholder="Votre prénom" aria-describedby="firstNameHelp">
                     </div>
                 </div>
                 <div class="d-flex justify-content-evenly">
                     <div class="mb-3 px-3 text-center w-100">
                         <label for="exampleInputEmail" class="form-label">
                           Adresse email <span class="text-danger font-weight-bold">*</span></label>
-                        <input type="email" class="form-control form-style" id="email" placeholder="Votre email" aria-describedby="emailHelp" name="email">
+                        <input type="email" class="form-control form-style" id="email" name="Email" placeholder="Votre email" aria-describedby="emailHelp">
                       </div>
                     <div class="mb-3 px-3 text-center w-100">
                         <label for="PhoneNumber" class="form-label">Numéro de téléphone</label>
@@ -44,10 +45,10 @@
                 <div class="mb-3 px-3 text-center w-100">
                     <label for="exampleInputEmail1" class="form-label">
                       Objet <span class="text-danger font-weight-bold">*</span></label></label>
-                    <input type="text" class="form-control form-style" id="bbject" placeholder="Objet du message" aria-describedby="emailHelp" name="object" required>
+                    <input type="text" class="form-control form-style" id="Object" placeholder="Objet du message" aria-describedby="emailHelp" name="Object" required>
                 </div>
                 <div class="form-floating mb-3 px-3">
-                    <textarea class="form-control form-style" placeholder="Leave a comment here" id="message" name="message" style="height: 100px"></textarea>
+                    <textarea class="form-control form-style" placeholder="Leave a comment here" id="message" name="Message" style="height: 100px"></textarea>
                     <label class="comments-label" for="floatingTextarea2">Message <span class="text-danger font-weight-bold">*</span></label></label>
                   </div>
 

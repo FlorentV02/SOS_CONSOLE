@@ -1,66 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="./asset/images/icon/logo_sos_consoles.png">
-    <link href="asset/css/style.css" rel="stylesheet">
+<?php include 'includes/head.php';?>
+    <title>SOS CONSOLES</title>
     <link href="asset/css/piece.css" rel="stylesheet">
-    <title>SOS CONSOLE</title>
+</head>
+<body>
+    <?php require('includes/nav-bar.php'); ?>
+
 </head>
   <body>
-    <header>
-      <div id="background-body">
-        <nav id="slider" class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.php"><img src="./asset/images/icon/logo_sos_consoles.png" alt="SOS_CONSOLE"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <div class="navbar-toggler-icon">
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-                <div id="navbar-trait-1" class="navbar-trait"></div>
-              </div>            
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-search-nav-bar form-search-page d-flex">
-                <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil" aria-label="Search">
-              <button class="btn btn-search btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </header>
-
     <section id="content" class="container pb-5">
         <div id ="header" class="text-center">
-            <div id ="background-entete" class="playfair position-relative">
-                <div id="entete-text" class="playfair">
-                    <h2 class="display-2 text-shadow">Reparation de console et de smartephone</h2>
-                    <span class="text-36 text-shadow">Phrase d'accroche à déterminer</span>
-                </div> 
-            </div>
+          <div id ="background-entete" class="playfair position-relative">
+            <div id="entete-text" class="playfair">
+              <h2 class="display-2 text-shadow">Reparation de console et de smartephone</h2>
+              <span class="text-36 text-shadow">Phrase d'accroche à déterminer</span>
+              </div> 
+        </div>
 
     <div class="pt-5">
 
@@ -83,80 +39,62 @@
           <div id="arrow"><img src="./asset/images/icon/Arrow_1.png"/></div>
 
 
-            <div class="d-flex align-items-center justify-content-center">
-                <div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input source-pro-sans" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                </div>
-                <div><img src ="./asset/images/Img_appareil.png" alt="Appareil" id="img-piece" class="my-3"/></div>
-                <div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label source-pro-sans" for="flexCheckDefault">
-                        Default checkbox
-                        </label>
-                    </div>
-            </div>
-          </div>
-            <div class="d-flex justify-content-center">
-                  <a class="btn-devis btn-search btn-outline-success mt-3 link-btn link-success" 
-                  href="devis.html">Envoyer</a>
-            </div>
-        </div>
-    </div>
+          <?php 
 
+            // Récupération des données du formulaire
+            
+            $appareil = $_POST['appareil']; 
+            
+            // query affichage du titre
+            $title = $pdo->query("SELECT image_1 FROM `Appareil` JOIN `Piece` ON Appareil.Id_Appareil = Piece.Id_appareil WHERE appareil.Id_Marque = $appareil");
+
+            // excution de la requete
+
+            $title->execute();
+
+
+            // envoie du resultat
+
+            $ligne = $title->fetch(PDO::FETCH_ASSOC);
+
+
+          
+            $query = $pdo->query("SELECT Id_Piece, piece.type, image_1, image_2 FROM `piece` JOIN `Appareil` ON Appareil.Id_appareil = piece.Id_appareil WHERE piece.Id_appareil = $appareil");
+
+            // affichage appareil 
+
+            $resultat = $query->fetchAll();
+
+
+
+
+          //Afficher le résultat         
+          ?>
+
+
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="flex-column">
+                <form action="devis.php" method="post">
+                  <?php foreach ($resultat as $key => $variable){?>
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="piece<?php echo($resultat[$key]['Id_Piece']); ?>" value="<?php echo($resultat[$key]['Id_Piece']); ?>" id="flexCheckDefault1">
+                          <label class="form-check-label source-pro-sans" for="flexCheckDefault">
+                          <?php echo($resultat[$key]['type']);?>
+                          </label>
+                      </div>
+                  <?php } ?>
+                </div>
+                <div><img src ="./asset/images/<?php echo $ligne['image_1']?>" alt="Appareil" id="img-piece" class="my-3"/></div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button class="btn-devis btn-search btn-outline-success mt-3 link-btn link-success" 
+                type="submit">Envoyer</button>
+              </form>
+              </div>                
+
+          </div>
+
+        </div>
     </section>
     
     <?php require('includes/footer.php'); ?>

@@ -88,10 +88,7 @@ body {
 
 #slider {
     background: #00BFB2;
-    position: sticky;
     width: 100%;
-    z-index: 999;
-    top: 0;
 }
 
 /* Burger-menu */
@@ -215,8 +212,10 @@ body {
 
     
         /* Create the parallax scrolling effect */
+        position: relative;
+        
         background-attachment: fixed;
-        background-position: center;
+        background-position:center;
         background-repeat: no-repeat;
         background-size: cover;
         padding: 15rem 0vw 15rem 0vw;

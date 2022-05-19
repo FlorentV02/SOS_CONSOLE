@@ -47,7 +47,7 @@ $resultat = $query->fetchAll();
 foreach ($resultat as $key => $variable)
 {?>
 
-<form action="console.php" method="post">
+<form action="appareil.php" method="post">
 
     <figure class="figure">
     <input type="submit" value="<?php echo($resultat[$key]['Id_Marque_Console']); ?>" name="console"><img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image']); ?>" 

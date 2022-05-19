@@ -44,6 +44,36 @@
                         <p class="color-green">Appareil séléctionné</p>
                     </div>
                 </div>
+
+                
+                <?php 
+
+                $ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);
+                print_r(array_values($ligne));
+
+
+                if(isset($_POST['piece'])){
+                    $ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);{
+                        print_r(array_values($ligne));
+                }
+
+}
+
+                //echo $piece;
+                foreach ($ligne aS $key => $piece){
+
+                
+                $query = $pdo->query("SELECT * FROM `piece` WHERE Id_Piece = $piece");
+
+                }
+
+                // affichage appareil 
+    
+                $resultat = $query->fetchAll();
+    
+                //Afficher le résultat         
+                ?>
+                
                 <div class="d-flex mx-3">
 
                     <table class="table table-striped table-bordered background-devis">
@@ -55,18 +85,15 @@
                         </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($resultat as $key => $variable){?>
                         <tr>
                             <th scope="row">1</th>
-                            <td>Repération 1</td>
-                            <td>23€</td>
+                            <td>Repération <?php echo($resultat[$key]['type']); ?></td>
+                            <td><?php echo($resultat[$key]['prix']).' €'; ?></td>
                         </tr>
+                        <?php } ?>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Répération 2</td>
-                            <td>50€</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
+                            <th scope="row"></th>
                             <td class="fw-bold text-uppercase">Total</td>
                             <td class="fw-bold font-weight-bold">83€</td>
                         </tr>

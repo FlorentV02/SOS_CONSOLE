@@ -49,7 +49,7 @@
 
             // query appareil
 
-            $query = $pdo->query("SELECT nom, marque ,image_presentation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.Id_Marque = $appareil");
+            $query = $pdo->query("SELECT Id_appareil ,nom, marque ,image_presentation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.Id_Marque = $appareil");
 
             // affichage appareil 
 
@@ -60,6 +60,7 @@
             ?>
 
             <p class="text-center playfair title-page display-5"><?php echo $ligne['appelation']. ' de marque ' .  $ligne['marque'];  ?></p>
+            
  
             <form class="form-search-page d-flex">
                 <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil"
@@ -81,18 +82,21 @@ function list_tables()
 
     }
     return FALSE;
-}
+}?>
 
+<form action="piece.php" method="post">
 
-foreach ($resultat as $key => $variable)
+<?php foreach ($resultat as $key => $variable)
 {?>
     <figure class="figure">
-    <a href="piece.php"><img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image_presentation']); ?>" 
-    class="figure-img img-fluid rounded" alt="..."></a>
+    <button type="submit" value="<?php echo($resultat[$key]['Id_appareil']); ?>" name="appareil">
+    <img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image_presentation']); ?>" 
+    class="figure-img img-fluid rounded" alt="<?php echo($resultat[$key]['nom']); ?>"></button>
     <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultat[$key]['nom']); ?>
     </figcaption>
     </figure>
 <?php };?>
+</form>
 
 
             </div>

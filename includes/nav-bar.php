@@ -1,6 +1,6 @@
 <header>
         <div id="background-body">
-            <nav id="slider" class="navbar navbar-expand-lg">
+            <nav id="slider" class="navbar navbar-expand-lg fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.php"><img src="./asset/images/icon/logo_sos_consoles.png"
                             alt="SOS_CONSOLE"></a>
@@ -24,9 +24,9 @@
                                     Information
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Nos informations</a></li>
-                                    <li><a class="dropdown-item" href="#">Nous laisser un message</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="information.php">Nos informations</a></li>
+                                    <li><a class="dropdown-item" href="contact.php">Nous laisser un message</a></li>
+                                    <li><a class="dropdown-item" href="#"></a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

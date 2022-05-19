@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php require('includes/head.php');?>
+<?php require('includes/head.php');
+      require('includes/request-index.php')?>
 <link href="asset/css/accueil.css" rel="stylesheet">
 <title>SOS CONSOLES</title>
 
@@ -19,16 +20,17 @@
       </div>
       
       <div id ="new" class="playfair py-4 px-4">
-        <p class="font-weight-bold text-center text-48">NEWS !</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nulla mi, ultricies elementum est quis, 
-          vestibulum faucibus purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames 
-          ac turpis egestas. Praesent sit amet est massa. Aliquam congue ipsum sit amet neque cursus sollicitudin.
-          Proin sollicitudin vel mauris rhoncus fermentum. Nulla eu tincidunt ligula, at fringilla odio. 
-          Cras pulvinar tortor quis urna iaculis, et convallis sapien commodo. 
-          Pellentesque quis magna orci. Proin vitae urna sollicitudin justo venenatis fringilla. 
-          In sit amet pretium elit, sed dapibus ante. Suspendisse vel venenatis nisl, non commodo ligula.
-        </p>
+        <p class="font-weight-bold text-center display-6"><?php echo $News['titre']; ?></p>
+        <p class='text-center font-weight-bold text-48 '>
+          <?php if(empty($News['texte'])){
+            echo " Aucune news aujourd'hui ! ";
+          }
+          
+          else {
+            echo $News['texte'];
+          }?>
+          </p>
+
       </div>
 
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -90,7 +92,7 @@
       $query = $pdo->query("SELECT * FROM `Type_appareil`");
 
       $resultat = $query->fetchAll();
-      {?>
+      ?>
         <form action="marque.php" method="post">
         <div class="card-group justify-content-center choice-card py-2">
           <?php
@@ -99,7 +101,7 @@
           ?>
           <button class="btn-no-style card-link card-bloc pb-2" name="type" type="submit" value="<?php echo($resultat[$key]['Id_type']); ?>">
             <div class="card bg-dark text-white bloc-card">
-              <img class="card-img" src="<?php echo'./asset/images/'.$resultat[$key]['image'];?>" alt="<?php print $resultat[$key]['name'] ?>">
+              <img class="card-img" src="<?php echo'./asset/images/'.$resultat[$key]['image'];?>" alt="<?php print $resultat[$key]['appelation'] ?>">
               <div class="card-img-overlay">
                 <h5 class="card-title"><?php print $resultat[$key]['appelation'] ?></h5>
               </div>
@@ -110,7 +112,7 @@
         ?>
           </div>
         </form>
-<?php }?>
+
 
     </section>
     
