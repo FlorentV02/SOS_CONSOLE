@@ -48,22 +48,34 @@
                 
                 <?php 
 
-                $ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);
-                print_r(array_values($ligne));
+                //$ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);
+                //print_r(array_values($ligne));
 
 
-                if(isset($_POST['piece'])){
-                    $ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);{
-                        print_r(array_values($ligne));
-                }
 
-}
+                    $ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);
+                    $foundRows=array();
+                    $query="SELECT * FROM piece WHERE ";
+                    foreach($ligne as $name)
+                    {
+                        $query="SELECT * FROM piece WHERE name='$name'";
+                        $res=mysql_query($query,$link);
+                        while($row=mysql_fetch_assoc($res))
+                        {
+                        //Push the rows you have found to the foundRows array declared above
+                        array_push($foundRows,$row);
+                        }
+                    }
+
+                    print_r($foundRows);
+
+
 
                 //echo $piece;
                 foreach ($ligne aS $key => $piece){
 
                 
-                $query = $pdo->query("SELECT * FROM `piece` WHERE Id_Piece = $piece");
+                $query = $pdo->query("SELECT * FROM `piece` WHERE Id_Piece = ('$piece')");
 
                 }
 
