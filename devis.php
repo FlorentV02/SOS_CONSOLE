@@ -5,7 +5,9 @@
     <title>SOS CONSOLE</title>
 </head>
   <body>
-  <?php require('includes/nav-bar.php'); ?>
+  <?php 
+  ob_start();
+  require('includes/nav-bar.php'); ?>
     <section id="content" class="container pb-5">
         <div id ="header" class="text-center">
             <div id ="background-entete" class="playfair position-relative">
@@ -51,15 +53,76 @@
                 //$ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);
                 //print_r(array_values($ligne));
 
+                //piece.type, piece.prix,SUM(piece.prix + piece.prix) AS total;
+
+                    //$_POST['piece1'] =  $_POST['piece2'] = $_POST['piece3'] ="";
 
 
-                    $ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);
-                    $foundRows=array();
+
+
+                // affichage appareil 
+
+                //$resultat = $query->fetchAll();                    
+
+                error_reporting(E_ERROR | E_PARSE);
+
+                    if($_POST['piece1'] == "" AND $_POST['piece2'] == "" AND $_POST['piece3'] == ""){
+                        header("Location: http://127.0.0.1/dev/SOS_CONSOLES/piece.php");
+                        exit();
+                    }
+
+                    $dev1="0";
+                    $dev2="0";
+                    $dev3="0";
+
+                    if($_POST['piece1']==""){$dev1='0';}else{$dev1=$_POST['piece1'];}
+                    if($_POST['piece2']==""){$dev2='0';}else{$dev2=$_POST['piece2'];}
+                    if($_POST['piece3']==""){$dev3='0';}else{$dev3=$_POST['piece3'];}
+
+                    $ligne= array($dev1, $dev2, $dev3);
+
+                    $variables_joins = join(',',$ligne);
+
+                    $query1 = $pdo->query("SELECT piece.prix , SUM(piece.prix) AS total FROM piece where Id_Piece IN ($variables_joins)");
+                       
+                        $query1->execute();
+
+
+
+                        // envoie du resultat
+            
+                        $relt = $query1->fetch(PDO::FETCH_ASSOC);
+                      
+                        $variables_joins = join(',',$ligne);  
+
+                        $query = $pdo->query(
+                            "SELECT piece.type, piece.prix FROM piece where Id_Piece IN ($variables_joins)");
+    
+                        $resultat = $query->fetchAll();
+    
+
+                    
+
+                // Récupérer les 3 variables - Les convertir en entier
+
+
+                    //$total = array_sum($ligne);
+
+
+
+                    //$test = $query1->fetch(PDO::FETCH_ASSOC);
+
+                    //print_r($test) ;
+
+
+
+
+/*                    $foundRows=array();
                     $query="SELECT * FROM piece WHERE ";
                     foreach($ligne as $name)
                     {
                         $query="SELECT * FROM piece WHERE name='$name'";
-                        $res=mysql_query($query,$link);
+                        $res=mysql_query($query,$ligne);
                         while($row=mysql_fetch_assoc($res))
                         {
                         //Push the rows you have found to the foundRows array declared above
@@ -68,20 +131,20 @@
                     }
 
                     print_r($foundRows);
+*/
 
 
 
                 //echo $piece;
-                foreach ($ligne aS $key => $piece){
+                //foreach ($variables_imploded AS $key => $piece){
 
                 
-                $query = $pdo->query("SELECT * FROM `piece` WHERE Id_Piece = ('$piece')");
+                //$query = $pdo->query("SELECT * FROM piece where Id_Piece IN ($variables_joins)");
 
-                }
+                //}
 
                 // affichage appareil 
     
-                $resultat = $query->fetchAll();
     
                 //Afficher le résultat         
                 ?>
@@ -97,17 +160,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($resultat as $key => $variable){?>
+                            <?php 
+                            $i=1;
+                            foreach ($resultat as $key => $variable){?>
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row"><?php echo $i?> </th>
+                            <?php $i =$i+1; ?>
                             <td>Repération <?php echo($resultat[$key]['type']); ?></td>
-                            <td><?php echo($resultat[$key]['prix']).' €'; ?></td>
+                            <td><?php echo intval($resultat[$key]['prix']).' €'; ?></td>
                         </tr>
                         <?php } ?>
                         <tr>
                             <th scope="row"></th>
                             <td class="fw-bold text-uppercase">Total</td>
-                            <td class="fw-bold font-weight-bold">83€</td>
+                            <td class="fw-bold font-weight-bold"><?php echo $relt['total'];?></td>
                         </tr>
                         </tbody>
                     </table>

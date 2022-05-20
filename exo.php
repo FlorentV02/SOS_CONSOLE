@@ -1,10 +1,16 @@
-<?php
-if(isset($_POST['test'])){
-    if(in_array('value1', $_POST['test'])){
-        echo "Option1 was checked!";
-    }
-    if(in_array('value2', $_POST['test'])){
-        echo "Option2 was checked!";
-    }
-}
+<?php 
+
+include ('includes/head.php');
+
+$variable[] = $post[1,2,3];
+
+$variables_imploded = implode(",",$variable);
+
+echo $variables_imploded;
+
+"SELECT * 
+FROM software_capability 
+where software_capability_id IN 
+(".$variables_imploded.")";
+
 ?>

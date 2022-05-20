@@ -57,18 +57,14 @@
 
             $ligne = $title->fetch(PDO::FETCH_ASSOC);
 
-
-          
+            
             $query = $pdo->query("SELECT Id_Piece, piece.type, image_1, image_2 FROM `piece` JOIN `Appareil` ON Appareil.Id_appareil = piece.Id_appareil WHERE piece.Id_appareil = $appareil");
 
             // affichage appareil 
 
             $resultat = $query->fetchAll();
 
-
-
-
-          //Afficher le résultat         
+            //Afficher le résultat         
           ?>
 
 
