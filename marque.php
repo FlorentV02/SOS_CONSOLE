@@ -1,4 +1,22 @@
-<?php include 'includes/head.php';?>
+<?php include 'includes/head.php';
+
+// récupération de l'ID appareil
+
+    $IdAppareil = $_POST['type']; 
+    $title = $pdo->query("SELECT Type_appareil.appelation FROM `Type_appareil` WHERE Type_appareil.Id_type = $IdAppareil");
+
+    $title->execute();
+
+    $ligne = $title->fetch(PDO::FETCH_ASSOC);
+
+    $query = $pdo->query("
+    SELECT Id_Marque, marque, marque.image 
+    FROM `Marque` JOIN `Type_appareil`
+    ON type_appareil.id_type = marque.Id_type 
+    WHERE type_appareil.Id_type = $IdAppareil
+    ");
+    $resultat = $query->fetchAll();?>
+
     <link href="asset/css/phone.css" rel="stylesheet">
     <title>SOS CONSOLES</title>
 </head>
@@ -29,7 +47,7 @@
                 </div>
             </div>
 
-            <p class="text-center playfair title-page display-5">Choisir une marque de console</p>
+            <p class="text-center playfair title-page display-5">Choisez une marque de <?php echo mb_strtolower($ligne['appelation'], 'UTF-8'); ?></p>
 
             <form class="form-search-page d-flex">
                 <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil"
@@ -39,16 +57,10 @@
 
             <div class="d-flex justify-content-center flex-wrap">
 
+            
+
                 <?php 
-                $mark = $_POST['type']; 
-                $query = $pdo->query("
-                SELECT Id_Marque, marque, marque.image 
-                FROM `Marque` JOIN `Type_appareil`
-                ON type_appareil.id_type = marque.Id_type 
-                WHERE type_appareil.Id_type = $mark
-                ");
-                $resultat = $query->fetchAll();
-//Afficher le résultat dans un tableau
+            //Afficher le résultat dans un tableau
 
 foreach ($resultat as $key => $variable)
 {?>

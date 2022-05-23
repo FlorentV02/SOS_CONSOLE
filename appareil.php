@@ -59,7 +59,7 @@
                         
             ?>
 
-            <p class="text-center playfair title-page display-5"><?php echo $ligne['appelation']. ' de marque ' .  $ligne['marque'];  ?></p>
+            <p class="text-center playfair title-page display-5"><?php echo 'Choissez votre ' . strtolower($ligne['appelation']). ' de marque ' .  $ligne['marque'];  ?></p>
             
  
             <form class="form-search-page d-flex">

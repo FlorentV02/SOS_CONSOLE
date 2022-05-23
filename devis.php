@@ -48,21 +48,8 @@
                 </div>
 
                 
-                <?php 
-
-                //$ligne=array($_POST['piece1'], $_POST['piece2'], $_POST['piece3']);
-                //print_r(array_values($ligne));
-
-                //piece.type, piece.prix,SUM(piece.prix + piece.prix) AS total;
-
-                    //$_POST['piece1'] =  $_POST['piece2'] = $_POST['piece3'] ="";
-
-
-
-
-                // affichage appareil 
-
-                //$resultat = $query->fetchAll();                    
+                <?php             
+                // Rediriger vers une autre page si aucune checkbox n'a été coché 
 
                 error_reporting(E_ERROR | E_PARSE);
 
@@ -71,82 +58,51 @@
                         exit();
                     }
 
+
+                // Création de variable qui est par défaut à "0" si les checks box sont non rempli. 
+                // Ces variables remplissent un tableaux qui sera utile pour la request SQL afin d'afficher les pièces 
+                // selectionné par l'utilisateur
+
                     $dev1="0";
                     $dev2="0";
                     $dev3="0";
+
+                // Verification des checkbox si elles sont selectionnés
 
                     if($_POST['piece1']==""){$dev1='0';}else{$dev1=$_POST['piece1'];}
                     if($_POST['piece2']==""){$dev2='0';}else{$dev2=$_POST['piece2'];}
                     if($_POST['piece3']==""){$dev3='0';}else{$dev3=$_POST['piece3'];}
 
+
+                // On créer un tableau avec les variables qui comprenne la valeur $_POST des checksboxs, donc soit un ID d'une pièce
+                // Soit une valeur de 0
+
                     $ligne= array($dev1, $dev2, $dev3);
+
+                // On join une virgule au tableau afin que celui-ci puisse être lu par le PHP
 
                     $variables_joins = join(',',$ligne);
 
+                // Request SQL prix et calcule du prix total des pièces + execution de la request SQL
+
                     $query1 = $pdo->query("SELECT piece.prix , SUM(piece.prix) AS total FROM piece where Id_Piece IN ($variables_joins)");
-                       
-                        $query1->execute();
+
+                    $query1->execute();
 
 
-
-                        // envoie du resultat
+                // envoie du resultat
             
-                        $relt = $query1->fetch(PDO::FETCH_ASSOC);
-                      
-                        $variables_joins = join(',',$ligne);  
+                    $global = $query1->fetch(PDO::FETCH_ASSOC);
 
-                        $query = $pdo->query(
-                            "SELECT piece.type, piece.prix FROM piece where Id_Piece IN ($variables_joins)");
-    
-                        $resultat = $query->fetchAll();
-    
-
-                    
-
-                // Récupérer les 3 variables - Les convertir en entier
-
-
-                    //$total = array_sum($ligne);
-
-
-
-                    //$test = $query1->fetch(PDO::FETCH_ASSOC);
-
-                    //print_r($test) ;
-
-
-
-
-/*                    $foundRows=array();
-                    $query="SELECT * FROM piece WHERE ";
-                    foreach($ligne as $name)
-                    {
-                        $query="SELECT * FROM piece WHERE name='$name'";
-                        $res=mysql_query($query,$ligne);
-                        while($row=mysql_fetch_assoc($res))
-                        {
-                        //Push the rows you have found to the foundRows array declared above
-                        array_push($foundRows,$row);
-                        }
-                    }
-
-                    print_r($foundRows);
-*/
-
-
-
-                //echo $piece;
-                //foreach ($variables_imploded AS $key => $piece){
-
+                // Second request qui affiche en ligne chacune des pièces choisi avec leur prix unitaires
                 
-                //$query = $pdo->query("SELECT * FROM piece where Id_Piece IN ($variables_joins)");
+                    $query = $pdo->query(
+                        "SELECT piece.type, piece.prix FROM piece where Id_Piece IN ($variables_joins)");
 
-                //}
+                // On publie toutes les lignes de la request SQL et on affiche le résultat dans le code HTML 
+    
+                    $resultat = $query->fetchAll();
 
-                // affichage appareil 
-    
-    
-                //Afficher le résultat         
                 ?>
                 
                 <div class="d-flex mx-3">
@@ -173,7 +129,7 @@
                         <tr>
                             <th scope="row"></th>
                             <td class="fw-bold text-uppercase">Total</td>
-                            <td class="fw-bold font-weight-bold"><?php echo $relt['total'];?></td>
+                            <td class="fw-bold font-weight-bold"><?php echo $global['total'];?></td>
                         </tr>
                         </tbody>
                     </table>
@@ -186,9 +142,7 @@
                  Obtenir un devis</a>
             </div>
         </div>
-
-
-
+        
     </section>
     
     <?php require('includes/footer.php'); ?>
