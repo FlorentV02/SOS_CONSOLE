@@ -14,11 +14,6 @@
 
 /* choice-bloc */
 
-#choice {
-    margin-top: 3vw;
-}
-
-
 
 .img-console:hover {
 
@@ -31,31 +26,6 @@
 
 
 }
-
-/*
-
-#img-telephone {
-    background: linear-gradient(0deg, rgba(60, 60, 60, 0.8), rgba(60, 60, 60, 0.8));
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 25rem;
-    height: 35rem;
-    background-position: center;
-
-}
-
-#img-telephone:hover {
-    background: linear-gradient(0deg, rgba(60, 60, 60, 0), rgba(60, 60, 60, 0));
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 25rem;
-    height: 35rem;
-    background-position: center;
-
-}
-*/
 
 
 /* card */

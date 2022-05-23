@@ -85,8 +85,6 @@
 
         <h2 class="title-page display-4">Choisir votre appareil</h2>
 
-        <p class="display-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum vulputate enim euismod, nec.</p>
-
       <?php
       
       $query = $pdo->query("SELECT * FROM `Type_appareil`");

@@ -61,28 +61,14 @@
 
             <p class="text-center playfair title-page display-5"><?php echo 'Choissez votre ' . strtolower($ligne['appelation']). ' de marque ' .  $ligne['marque'];  ?></p>
             
- 
-            <form class="form-search-page d-flex">
+
+            <form class="form-search-page d-flex" method="GET" name="recherche" action="" >
                 <input class="search-bar loupe form-control me-2" type="search" placeholder="Selection un appareil"
                     aria-label="Search">
                 <button class="btn btn-search btn-outline-success" type="submit">Search</button>
             </form>
 
             <div class="d-flex justify-content-center flex-wrap">
-
-                <?php 
-
-function list_tables()
-{
-    $sql = 'SHOW TABLES';
-    if($this->is_connected)
-    {
-        $table = $this->pdo->query($sql);
-        return $table->fetchAll(PDO::FETCH_COLUMN);
-
-    }
-    return FALSE;
-}?>
 
 <form action="piece.php" method="post">
 

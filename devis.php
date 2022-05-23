@@ -129,7 +129,7 @@
                         <tr>
                             <th scope="row"></th>
                             <td class="fw-bold text-uppercase">Total</td>
-                            <td class="fw-bold font-weight-bold"><?php echo $global['total'];?></td>
+                            <td class="fw-bold font-weight-bold"><?php echo $global['total']. ' €';?></td>
                         </tr>
                         </tbody>
                     </table>
@@ -142,7 +142,7 @@
                  Obtenir un devis</a>
             </div>
         </div>
-        
+
     </section>
     
     <?php require('includes/footer.php'); ?>
