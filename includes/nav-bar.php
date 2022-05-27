@@ -37,7 +37,7 @@
                                 <a class="nav-link disabled">Disabled</a>
                             </li>
                         </ul>
-                        <form class="form-search-nav-bar d-flex" name="recherche" method="post" action="test.php">
+                        <form class="form-search-nav-bar d-flex" name="nav-recherche" method="post" action="">
                             <input class="search-bar loupe form-control me-2" type="search"
                                 placeholder="Selection un appareil" aria-label="Search">
                             <button class="btn btn-search btn-outline-success" type="submit">Recherche</button>

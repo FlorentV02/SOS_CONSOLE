@@ -1,6 +1,23 @@
+<?php require('includes/head.php');
+    
+    if(isset() AND )
+    $ligneNom1 = $_POST['devis-nom-1'];
+    $ligneNom2 = $_POST['devis-nom-2'];
+    $ligneNom3 = $_POST['devis-nom-3'];
+    $ligneNom4 = $_POST['devis-nom-4'];
+    $ligneNom5 = $_POST['devis-nom-5'];
+    $ligneNom6 = $_POST['devis-nom-6'];
+    $ligneNom7 = $_POST['devis-nom-7'];
+    $ligneNom8 = $_POST['devis-nom-8'];
+    $ligneNom9 = $_POST['devis-nom-9'];
+    $ligneNom10 = $_POST['devis-nom-10'];
+
+
+    ?>
+
 <!DOCTYPE html>
 <html lang="fr">
-    <?php require('includes/head.php');?>
+
     <link href="asset/css/contact.css" rel="stylesheet">
     <title>SOS CONSOLE</title>
   </head>
@@ -77,11 +94,12 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-search btn-outline-success playfair">Téléchargez</button>
+                <button type="submit" name="envoyer" class="btn btn-search btn-outline-success playfair">Téléchargez</button>
             </div>
           </form>
           
           <p class="text-danger text-right">Champs obligatoire *</p>
+
     </div>
         
         </div>

@@ -4,46 +4,49 @@
 //echo mail(); 
 
 
-if (isset($_POST['Email'])) {
+if (isset($_POST['Email']) !== "" || ($_POST['object']) !== "" || ($_POST['message']) !== "" || ($_POST['Name']) !== "" ) {
     $entete  = 'MIME-Version: 1.0' . "\r\n";
     $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
     $entete .= 'From:'. $_POST['Email'] . "\r\n";
-    $entete .= 'Reply-to: email@mail.com' ;
+    $entete .= 'Reply-to: florviev@gmail.com' ;
     $entete .= 'Reply-to: ' . $_POST['Email'];
     $entete .= 'Objet:' . $_POST['object'];
 
+if (empty($_POST['Telephone']) OR !is_numeric($_POST['Telephone'])){
+    $_POST['Telephone'] = "N'a pas laisser son numéro de téléphone";
+    }
 
-    $message = '<h1>Message envoyé depuis la page Contact de monsite.fr</h1>
+if (empty($_POST['Name'])){
+    $_POST['Name'] = "Non renseigné";
+}
+//<br>Information complémentaire : <br> Nom utilisateur :' .$_POST['Name']. '<br> Prénom :'. $_POST['FirstName'] . $_POST['Telephone'].''
+    $message = '<h1>Votre devis</h1>
     <p><b>Email : </b>' . $_POST['Email'] . '<br>
-    <b>Message : </b>' . htmlspecialchars($_POST['Message']) . '</p>';
+    <b>Message : </b>' . htmlspecialchars($_POST['Message']) . '</p>' . '<br><h2>Information complémentaire</h2>
+     <br> <span>Nom utilisateur : ' .$_POST['Name']. '</span><br><span>Prénom :'. $_POST['FirstName'] 
+     .'</span><br><span> Numéro de téléphone : ' . $_POST['Telephone'].'</span>' ;
+    echo '<p> email'. $_POST['Email'] .'<br> nom    ' . $_POST['Name'] . '<br> prénom ' . $_POST['FirstName'] . '<br>' . $_POST['object'] .'<br>'. $_POST['Telephone'] . '</p>';
+
+
 
     $retour = mail('florviev@gmail.com', 'Envoi depuis page Contact', $message, $entete);
     if($retour)
-        echo '<p>Votre message a bien été envoyé.</p>';
+        echo '<p>Votre message a bien été envoyé.</p> ';
+        //echo '</br> Numéro de Téléphone : ' .  . '' ;
         else{
             echo 'Message non envoyé';
-            echo '<p>'. $_POST['Email'] .'<br>' . $_POST['Name'] . '<br>' . $_POST['FirstName'] . '<br>' . $_POST['object'] .'</p>';
 
         }
 }
 
 else{
-    echo 'Mdr j\'ai pas lu';
-    echo $_POST['Email'];
-    echo $_POST['object'];
-    echo $_POST['Message'];
+    echo 'Erreur';
 }
 
-/*if(isset($_POST('send'))){
-    
-    if(!empty($_POST['Name']) AND !empty($_POST['FirstName']) AND !empty($_POST['Email']) AND !empty($_POST['Email']) AND !empty($_POST['Object']) AND !empty($_POST['Message'])){
+var_dump($entete);
+var_dump($message);
+//var_dump($_POST['Name']);
 
-    }
-
-    else {
-        $errorMsg ="Veuillez complété les champs obligatoire *";
-    }
-}
-*/
 
 ?>
+

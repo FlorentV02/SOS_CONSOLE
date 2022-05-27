@@ -39,13 +39,13 @@
                       </div>
                     <div class="mb-3 px-3 text-center w-100">
                         <label for="PhoneNumber" class="form-label">Numéro de téléphone</label>
-                        <input type="text" class="form-control form-style" id="PhoneNumber" placeholder="Numéro de téléphone" aria-describedby="PhoneNumberHelp">
+                        <input type="text" class="form-control form-style" id="PhoneNumber" name="Telephone" placeholder="Numéro de téléphone" aria-describedby="PhoneNumberHelp">
                     </div>
                 </div>
                 <div class="mb-3 px-3 text-center w-100">
                     <label for="exampleInputEmail1" class="form-label">
-                      Objet <span class="text-danger font-weight-bold">*</span></label></label>
-                    <input type="text" class="form-control form-style" id="Object" placeholder="Objet du message" aria-describedby="emailHelp" name="Object" required>
+                      Titre du message <span class="text-danger font-weight-bold">*</span></label></label>
+                    <input type="text" class="form-control form-style" id="Object" placeholder="Objet du message" aria-describedby="emailHelp" name="object" required>
                 </div>
                 <div class="form-floating mb-3 px-3">
                     <textarea class="form-control form-style" placeholder="Leave a comment here" id="message" name="Message" style="height: 100px"></textarea>
