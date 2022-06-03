@@ -42,35 +42,41 @@
 
         </div>
         <div class="carousel-inner">
+          <?php foreach ($resultatCarousel as $key => $variable) 
+          
+          ?>
           <div class="carousel-item active">
-            <img src="asset/images/274332131_466244378576661_3517310084040936391_n.jpg" class="d-block h-30 w-100" alt="...">
+            <?php if(!empty($resultatCarousel[0]['Id_Carouselle'])){ ?>
+            <img src="asset/images/<?php if(!empty($resultatCarousel[0]['image'])){echo $resultatCarousel[0]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <h5><?php if(!empty($resultatCarousel[0]['titre'])){echo $resultatCarousel[0]['titre'];}?></h5>
+              <p><?php if(!empty($resultatCarousel[0]['texte'])){echo $resultatCarousel[0]['titre'];}else{ echo ''; }?></p>
+            </div>
+          </div>
+          <?php } ?>
+          <div class="carousel-item">
+            <img src="asset/images/<?php if(!empty($resultatCarousel[1]['image'])){echo $resultatCarousel[1]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5><?php if (!empty($resultatCarousel[1]['titre'])){echo $resultatCarousel[1]['titre'];} else{ echo ''; }?></h5>
+              <p><?php if(!empty($resultatCarousel[1]['texte'])){echo $resultatCarousel[1]['titre'];}else{ echo ''; }?></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="asset/images/274332131_466244378576661_3517310084040936391_n.jpg" class="d-block w-100" alt="...">
+            <img src="asset/images/<?php if(!empty($resultatCarousel[2]['image'])){echo $resultatCarousel[2]['image'];}else{ echo $resultatCarousel[99]['image']; }?>" class="d-block h-30 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+              <h5><?php if(!empty($resultatCarousel[2]['titre'])){echo $resultatCarousel[2]['titre'];}else{ echo ''; }?></h5>
+              <p><?php if(!empty($resultatCarousel[2]['texte'])){echo $resultatCarousel[2]['titre'];}else{ echo ''; }?></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="asset/images/274332131_466244378576661_3517310084040936391_n.jpg" class="d-block w-100" alt="...">
+            <img src="asset/images/<?php if(!empty($resultatCarousel[3]['image'])){echo $resultatCarousel[3]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="asset/images/274332131_466244378576661_3517310084040936391_n.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Fourth slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+              <h5><?php if(!empty($resultatCarousel[3]['titre'])){echo $resultatCarousel[3]['titre'];}else{ echo ''; }?></h5>
+              <p><?php if(!empty($resultatCarousel[3]['texte'])){echo $resultatCarousel[3]['titre'];}else{ echo ''; }?></p>
             </div>
           </div>
         </div>
+        
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -79,22 +85,19 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+        
       </div>
 
       <div id="choice" class="playfair text-center text-white">
 
         <h2 class="title-page display-4">Choisir votre appareil</h2>
 
-        <p class="display-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porta ipsum vulputate enim euismod, nec.</p>
-
       <?php
       
-      $query = $pdo->query("SELECT * FROM `Type_appareil`");
 
-      $resultat = $query->fetchAll();
       ?>
         <form action="marque.php" method="post">
-        <div class="card-group justify-content-center choice-card py-2">
+        <div class="card-group d-flex justify-content-center choice-card py-2">
           <?php
         foreach ($resultat as $key => $variable)
         {

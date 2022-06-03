@@ -192,7 +192,6 @@ body {
 
 #content {
     background-color: #ffffff;
-    background-image: url('../images/IMG_20220425_162312.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -234,6 +233,9 @@ body {
 }
 
 
+/**************************************** Page affiche commun phone.css  ******************************************/
+
+
 /* file d'ariane */ 
 
 /* cercle  */
@@ -267,6 +269,8 @@ body {
     border-radius: 50%;
 }
 
+/* seperation */
+
 .trait-empty {
     border: 2px solid rgba(0, 191, 178, 0.33);
     height: 0;
@@ -278,6 +282,17 @@ body {
     height: 0;
     width: calc(4rem + 8vw);
 }
+
+/* Fond page broder*/
+
+#border-bloc {
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 5vw 5vw 0vw 5vw;
+    padding: 5vw 0 5vw 0;
+    }
 
 /* Footer */
 
@@ -303,10 +318,6 @@ body {
 
 @media (max-width: 991.98px) { 
 
-    .choice-card .card-link {
-
-        padding-left: 0;
-    }
     
  }
 

@@ -58,22 +58,28 @@
             $ligne = $title->fetch(PDO::FETCH_ASSOC);
 
             
-            $query = $pdo->query("SELECT Id_Piece, piece.type, image_1, image_2 FROM `piece` JOIN `Appareil` ON Appareil.Id_appareil = piece.Id_appareil WHERE piece.Id_appareil = $appareil");
+            $query = $pdo->query("SELECT Id_Piece, piece.type, image_1, image_2, piece.Id_appareil FROM `piece` JOIN `Appareil` ON Appareil.Id_appareil = piece.Id_appareil WHERE piece.Id_appareil = $appareil");
 
             // affichage appareil 
 
             $resultat = $query->fetchAll();
 
             //Afficher le résultat         
+
+
+            // 
+            
           ?>
 
 
             <div class="d-flex align-items-center justify-content-center">
                 <div class="flex-column">
                 <form action="devis.php" method="post">
-                  <?php foreach ($resultat as $key => $variable){?>
+                  <?php $i=0;
+                  foreach ($resultat as $key => $variable){$i =$i+1;?>
                       <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="piece<?php echo($resultat[$key]['Id_Piece']); ?>" value="<?php echo($resultat[$key]['Id_Piece']); ?>" id="flexCheckDefault1">
+                          <input class="form-check-input" type="checkbox" name="<?php echo 'piece'.$i ?>" value="<?php echo($resultat[$key]['Id_Piece']); ?>" id="<?php echo 'flexCheckDefault'.$i?>">
+                          <input id="prodId" name="appareil" type="hidden" value="<?php echo ($resultat[$key]['Id_appareil'])?>">
                           <label class="form-check-label source-pro-sans" for="flexCheckDefault">
                           <?php echo($resultat[$key]['type']);?>
                           </label>
@@ -84,8 +90,8 @@
               </div>
               <div class="d-flex justify-content-center">
                 <button class="btn-devis btn-search btn-outline-success mt-3 link-btn link-success" 
-                type="submit">Envoyer</button>
-              </form>
+                type="submit" name="envoyer">Envoyer</button>
+                </form>
               </div>                
 
           </div>

@@ -1,6 +1,6 @@
 <footer id="footer" class="d-flex text-center align-items-center justify-content-center">
     <ul id ="contact" class="playfair item-bar">
-      <li class="fw-bolder text-36">Contactez nous !</li>
+      <li class="fw-bolder display-6">Contactez nous !</li>
       <li><img class="logo-contact" src="asset/images/icon/facebook.png" class="card-img-top" alt="Facebook">
         <a target="_blank" href="https://www.facebook.com/jeremy.verhoye.3" title="Facebook" 
         class="nav-item">Notre page facebook</a>

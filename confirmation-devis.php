@@ -1,6 +1,21 @@
+<?php require('includes/head.php');
+
+    if(empty($_POST['devis-id-1'])){$_POST['devis-id-1'] = "";} else{}
+    if(empty($_POST['devis-id-2'])){$_POST['devis-id-2'] = "";}else{}
+    if(empty($_POST['devis-id-3'])){$_POST['devis-id-3'] = "";}else{}
+    if(empty($_POST['devis-id-4'])){$_POST['devis-id-4'] = "";}else{}
+    if(empty($_POST['devis-id-5'])){$_POST['devis-id-5'] = "";}else{}
+    if(empty($_POST['devis-id-6'])){$_POST['devis-id-6'] = "";}else{}
+    if(empty($_POST['devis-id-7'])){$_POST['devis-id-7'] = "";}else{}
+    if(empty($_POST['devis-id-8'])){$_POST['devis-id-8'] = "";}else{}
+    if(empty($_POST['devis-id-9'])){$_POST['devis-id-9'] = "";}else{}
+    if(empty($_POST['devis-id-10'])){$_POST['devis-id-10'] = "";}else{}
+
+    ?>
+
 <!DOCTYPE html>
 <html lang="fr">
-    <?php require('includes/head.php');?>
+
     <link href="asset/css/contact.css" rel="stylesheet">
     <title>SOS CONSOLE</title>
   </head>
@@ -67,6 +82,10 @@
           <p id="mail" class="text-center my-3 source-pro-sans">
             Pour recevoir votre devis, vous devez indiqué une adresse email, le devis sera envoyé directement à l'adresse noté</p>
 
+          
+          <?php 
+          
+  ?>
         
           <form id="formulaire" class="source-pro-sans">
           
@@ -77,11 +96,12 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-search btn-outline-success playfair">Téléchargez</button>
+                <button type="submit" name="envoyer" class="btn btn-search btn-outline-success playfair">Téléchargez</button>
             </div>
           </form>
           
           <p class="text-danger text-right">Champs obligatoire *</p>
+
     </div>
         
         </div>

@@ -1,0 +1,2 @@
+Ajout de chaîne dans le fichier
+Joystick;10.00 € ;Joystick;10.00 € ;Joystick;10.00 € ;Joystick;10.00 € ;Joystick;10.00 € ;Joystick;Joystick;Joystick;testtesttesttesttest

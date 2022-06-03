@@ -2,8 +2,6 @@
 
 include 'bdd.php';
 
-// Requête pour tester la connexion
-
 
 // Affichage News 
 
@@ -16,11 +14,15 @@ $queryNews->execute();
 
 $News = $queryNews->fetch(PDO::FETCH_ASSOC);
 
-//  Affichage Appareil 
+// Affichage caroussel 
 
-$query = $pdo->query("SELECT * FROM `appareil`");
+$queryCarousel = $pdo->query("SELECT * FROM `Carouselle`");
+$resultatCarousel = $queryCarousel->fetchALL();
+
+//  Affichage Appareil  
+
+$query = $pdo->query("SELECT * FROM `Type_appareil`");
 
 $resultat = $query->fetchAll();
-
 ?>
 
