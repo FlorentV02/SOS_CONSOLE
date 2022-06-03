@@ -178,7 +178,6 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
             <div class="d-flex justify-content-center">
               <a href="confirmation_devis.html" 
