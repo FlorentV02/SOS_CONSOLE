@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div id="phone-block">
+        <div id="border-bloc">
 
             <div>
                 <div class="d-flex align-items-center justify-content-center mx-2">
@@ -43,7 +43,7 @@
             if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
                 $recherche = $_GET['recherche'];
                  // query affichage du titre
-                $title = $pdo->query('SELECT appelation ,marque FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque JOIN `type_appareil` ON type_appareil.Id_type = marque.id_type WHERE appareil.nom LIKE "%'.$recherche.'%"');
+                $title = $pdo->query('SELECT type_appareil.Id_type , appelation ,marque FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque JOIN `type_appareil` ON type_appareil.Id_type = marque.id_type WHERE appareil.nom LIKE "%'.$recherche.'%"');
 
                 // excution de la requete
 
@@ -56,14 +56,14 @@
 
                 // query appareil
 
-                $query = $pdo->query('SELECT Id_appareil ,nom, marque ,image_presentation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.nom LIKE "%'.$recherche.'%"');
-                $count = $query->rowCount();
+                $queryAppareil = $pdo->query('SELECT Id_appareil ,nom, marque ,image_presentation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.nom LIKE "%'.$recherche.'%"');
+                $count = $queryAppareil->rowCount();
 
                 // affichage appareil 
                 
 
 
-                $resultat = $query->fetchAll();
+                $resultatAppareil = $queryAppareil->fetchAll();
 
 
                 //Afficher le résultat 
@@ -74,7 +74,7 @@
 
                 $appareil = $_POST['appareil'];
                 // query affichage du titre
-                $title = $pdo->query("SELECT Id_Appareil, marque, appelation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque JOIN `type_appareil` ON type_appareil.Id_type = marque.id_type WHERE appareil.Id_Marque = $appareil");
+                $title = $pdo->query("SELECT type_appareil.Id_type, Id_Appareil, marque, appelation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque JOIN `type_appareil` ON type_appareil.Id_type = marque.id_type WHERE appareil.Id_Marque = $appareil");
 
                 // excution de la requete
 
@@ -87,12 +87,12 @@
 
                 // query appareil
 
-                $query = $pdo->query("SELECT Id_appareil ,nom, marque ,image_presentation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.Id_Marque = $appareil");
-                $count = $query->rowCount();
+                $queryAppareil = $pdo->query("SELECT Id_appareil ,nom, marque ,image_presentation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.Id_Marque = $appareil");
+                $count = $queryAppareil->rowCount();
 
                 // affichage appareil 
 
-                $resultat = $query->fetchAll();
+                $resultatAppareil = $queryAppareil->fetchAll();
 
                 //Afficher le résultat 
             }
@@ -111,50 +111,50 @@
                                     
             ?>
 
-            <p class="text-center playfair title-page display-5"><?php if($count > 0){echo 'Choissez votre ' . strtolower($ligne['appelation']). ' de marque ' .  $ligne['marque'];} else{ echo 'Aucun résultat';} ?></p>
+            <p class="text-center playfair title-page display-5"><?php if($count > 0){echo 'Choissez votre ' . mb_strtolower($ligne['appelation']). ' de marque ' .  $ligne['marque'];} else{ echo 'Aucun résultat';} ?></p>
             
 
             <form class="form-search-page d-flex" method="GET"  action="" >
                 <input class="search-bar loupe form-control me-2" name="recherche" type="search" placeholder="Selection un appareil"
                     aria-label="Search">
-                <button class="btn btn-search btn-outline-success" name="envoyer" type="submit">Search</button>
+                <button class="btn btn-search btn-outline-success" name="envoyer" type="submit">Recherchez</button>
             </form>
 
 
             <div class="d-flex justify-content-center flex-wrap">
 
 
-<form action="piece.php" method="post">
+                <form action="piece.php" method="post">
 
-<?php 
+                <?php 
 
-
-
-
-
-if($count > 0 ) {
+                    if($count > 0 ) {
     
-foreach ($resultat as $key => $variable)
-{?>
-    <figure class="figure">
-    <button type="submit" value="<?php echo($resultat[$key]['Id_appareil']); ?>" name="appareil">
-    <img id="img-phone-1" class="img" src="asset/images/<?php echo($resultat[$key]['image_presentation']); ?>" 
-    class="figure-img img-fluid rounded" alt="<?php echo($resultat[$key]['nom']); ?>"></button>
-    <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultat[$key]['nom']); ?>
-    </figcaption>
-    </figure>
-<?php }
-}
-else {
-    echo 'Aucun résultat';
-};
-?>
-</form>
-
-
+                        foreach ($resultatAppareil as $key => $variable)
+                        {?>
+                        <figure class="figure">
+                            <button type="submit" value="<?php echo($resultatAppareil[$key]['Id_appareil']); ?>" name="appareil">
+                            <img id="img-phone-1" class="img" src="asset/images/<?php echo($resultatAppareil[$key]['image_presentation']); ?>" 
+                            class="figure-img img-fluid rounded" alt="<?php echo($resultatAppareil[$key]['nom']); ?>"></button>
+                            <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultatAppareil[$key]['nom']); ?>
+                            </figcaption>
+                        </figure>  
+                        <?php }
+                    }
+                    else {
+                        echo 'Aucun résultat';
+                    };
+                    ?>
+                </form>
+            </div> 
+            <form action="marque.php" method="post" >
+                <div class="d-flex justify-content-end ml-5">      
+                    <button class="layfair btn text-end btn-outline-success" name="type" type="submit" value="<?php echo $ligne['Id_type'];?>">
+                        <h5 class="">Retournez à la page précédente </h5>
+                    </button>
             </div>
+            </form>
         </div>
-
 
     </section>
 

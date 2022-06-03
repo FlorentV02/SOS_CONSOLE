@@ -5,6 +5,10 @@
         // Démarre la temporisation de sortie. Tant qu'elle est enclenchée, 
         //aucune donnée, hormis les en-têtes, n'est envoyée au navigateur, mais temporairement mise en tampon.
 
+        // écrire sur le fichier txt 
+
+        //$write = fopen("devis.txt","w");
+
         ob_start();
 
     
@@ -41,7 +45,6 @@
                     $_SESSION['appareil'] = $_POST['appareil'];
                     $appareil = $_SESSION['appareil'] ; 
 
-
                 // Verification des checkbox si elles sont selectionnés
 
                     if($_POST['piece1']==""){$dev1='0';}else{$dev1=$_POST['piece1'];}
@@ -70,8 +73,7 @@
 
                 // Second request qui affiche en ligne chacune des pièces choisi avec leur prix unitaires
                 
-                    $query = $pdo->query(
-                    "SELECT piece.type, piece.prix FROM piece where Id_Piece IN ($variables_joins)");
+                    $query = $pdo->query("SELECT piece.Id_piece, piece.type, piece.prix FROM piece where Id_Piece IN ($variables_joins)");
 
                 // Troisème request qui affichage le nom appareil
                     $title = $pdo->query("SELECT appareil.nom, piece.Id_Appareil, Appareil.Id_Appareil a FROM `Piece` JOIN `Appareil` ON piece.Id_Appareil = Appareil.Id_Appareil WHERE piece.Id_Appareil = $appareil");
@@ -86,6 +88,8 @@
                     $resultat = $query->fetchAll();
                     $global = $query1->fetch(PDO::FETCH_ASSOC);
                     $rappel = $title->fetch(PDO::FETCH_ASSOC);
+                
+                
                 ?>
     <link href="asset/css/devis.css" rel="stylesheet">
     <title>SOS CONSOLE</title>
@@ -116,11 +120,8 @@
         </div>  
 
         <div id="block-formulaire">
+            <form action="pdf.php" method="post">
             
-
-                        <?php echo $appareil;
-                        ?>
-
             <p class="text-center my-5 playfair title-page display-5">Votre récapitulatif</p>
 
             <div>
@@ -129,7 +130,8 @@
                     src="asset/images/amazon-prime-day-deals-nintendo-switch-1562596166.webp" 
                     alt="" width="250" height="250">
                     <div id="bloc-appareil" class="px-5 playfair font-18">
-                        <p class="color-green display-6">Appareil séléctionné : <?php echo $rappel['nom']; ?></p>
+                        <p class="color-green display-6">Appareil séléctionné :<input id="prodId1" name="appareil" type="hidden" value="<?php echo ($rappel['Id_appareil'])?>"> 
+                                    <?php echo $rappel['nom']; ?></input></p>
                     </div>
                 </div>
                 
@@ -137,7 +139,6 @@
 
                     
                         <table class="table table-striped table-bordered background-devis">
-                            <form method="POST" action="confirmation-devis.php" >
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -154,9 +155,9 @@
                                 <tr>
                                     <th scope="row"><?php echo $i;?> </th>
                                     <?php  ?>
-                                    <td><input id="prodId1" name="<?php echo 'devis-nom-'.$a; ?> " type="hidden" value="<?php echo ($resultat[$key]['type'])?>"> 
+                                    <td><input id="prodId1" name="<?php echo 'piece'.$a; ?>" type="hidden" value="<?php echo ($resultat[$key]['Id_piece'])?>"> 
                                     <?php echo ($resultat[$key]['type']); ?></input></td>
-                                    <td><input id="prodId2" name="<?php echo 'devis-prix-'.$b; ?> " type="hidden" value="<?php echo intval($resultat[$key]['prix'])?>"><?php echo intval($resultat[$key]['prix']).' €'; ?></td>
+                                    <td><?php echo intval($resultat[$key]['prix']).' €'; ?></td>
                                 </tr>
                                 <?php  $a =$a+1; $i =$i+1; $b =$b+1; } ?>
                                 <tr>
@@ -171,10 +172,10 @@
 
             </div>
             <div class="d-flex justify-content-center">
-              <button type="submit" class="btn-devis btn-search btn-outline-success m-3 link-success text-center link-btn">
-                 Obtenir un devis</button>
-                 <input id="prodId" name="appareil" type="hidden" value="<?php echo ($resultat[$key]['Id_appareil'])?>">
-                 </form>
+                <button type="submit" class="btn-devis btn-search btn-outline-success m-3 link-success text-center link-btn">
+                Obtenir un devis</button>
+                    <input id="prodId" name="appareil" type="hidden" value="<?php echo ($resultat[$key]['Id_appareil'])?>">
+            </form>
             </div>
         </div>
 

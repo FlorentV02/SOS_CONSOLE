@@ -53,7 +53,6 @@ if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
     else {
 
         $count = 0;
-
     }
 
 
@@ -75,7 +74,7 @@ if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
             </div>
         </div>
 
-        <div id="phone-block">
+        <div id="border-bloc">
 
             <div>
                 <div class="d-flex align-items-center justify-content-center mx-2">
@@ -97,8 +96,6 @@ if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
                 <button class="btn btn-search btn-outline-success" name="envoyer" type="submit">Search</button>
             </form>
             <div class="d-flex justify-content-center flex-wrap">
-
-            
 
                 <?php  
             //Afficher le résultat dans un tableau

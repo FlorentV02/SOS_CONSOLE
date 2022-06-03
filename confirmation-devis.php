@@ -1,17 +1,15 @@
 <?php require('includes/head.php');
-    
-    if(isset() AND )
-    $ligneNom1 = $_POST['devis-nom-1'];
-    $ligneNom2 = $_POST['devis-nom-2'];
-    $ligneNom3 = $_POST['devis-nom-3'];
-    $ligneNom4 = $_POST['devis-nom-4'];
-    $ligneNom5 = $_POST['devis-nom-5'];
-    $ligneNom6 = $_POST['devis-nom-6'];
-    $ligneNom7 = $_POST['devis-nom-7'];
-    $ligneNom8 = $_POST['devis-nom-8'];
-    $ligneNom9 = $_POST['devis-nom-9'];
-    $ligneNom10 = $_POST['devis-nom-10'];
 
+    if(empty($_POST['devis-id-1'])){$_POST['devis-id-1'] = "";} else{}
+    if(empty($_POST['devis-id-2'])){$_POST['devis-id-2'] = "";}else{}
+    if(empty($_POST['devis-id-3'])){$_POST['devis-id-3'] = "";}else{}
+    if(empty($_POST['devis-id-4'])){$_POST['devis-id-4'] = "";}else{}
+    if(empty($_POST['devis-id-5'])){$_POST['devis-id-5'] = "";}else{}
+    if(empty($_POST['devis-id-6'])){$_POST['devis-id-6'] = "";}else{}
+    if(empty($_POST['devis-id-7'])){$_POST['devis-id-7'] = "";}else{}
+    if(empty($_POST['devis-id-8'])){$_POST['devis-id-8'] = "";}else{}
+    if(empty($_POST['devis-id-9'])){$_POST['devis-id-9'] = "";}else{}
+    if(empty($_POST['devis-id-10'])){$_POST['devis-id-10'] = "";}else{}
 
     ?>
 
@@ -84,6 +82,10 @@
           <p id="mail" class="text-center my-3 source-pro-sans">
             Pour recevoir votre devis, vous devez indiqué une adresse email, le devis sera envoyé directement à l'adresse noté</p>
 
+          
+          <?php 
+          
+  ?>
         
           <form id="formulaire" class="source-pro-sans">
           

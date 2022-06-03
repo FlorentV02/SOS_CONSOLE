@@ -8,7 +8,7 @@
 /* carousel-item */
 
 .carousel-item {
-    height: 40%;
+    max-height: calc(30rem + 20vw);
 }
 
 
@@ -34,14 +34,16 @@
 
 
 .bloc-card {
-    width: 100%;
+    max-width: 22rem;
+    width: 70vw;
     -webkit-mask-image: -webkit-gradient(
       linear, left top, right bottom, 
       color-stop(1.00,rgba(60,60,60,0.8)));
 }
 
 .bloc-card:hover{
-    width: 100%;
+    max-width: 22rem;
+    width: 70vw;
     -webkit-mask-image: -webkit-gradient(
       linear, left top, right bottom, 
       color-stop(1.00,  rgba(0,0,0,1)));
@@ -50,6 +52,11 @@
 
 .card-group {
     display: flex;
+    
+}
+
+.card-group button {
+    max-width: 80%;
 }
 
 .choice-card .card {
@@ -70,11 +77,13 @@
 }
 
 .choice-card .card-link {
+    /*max-width: 35rem;
     width: 35vw;
     margin-left: 0;
-    justify-content: space-evenly;
+    justify-content: center;
     text-decoration: none;
-    padding-left: 1vw;
+    padding-left: 1rem;
+    */
 }
 
 .card-link:hover{
@@ -121,37 +130,17 @@
 
 @media (max-width: 991.98px) { 
 
-    .choice-card .card-link {
-
-        padding-left: 0;
-    }
-    
- }
-
-@media (max-width: 767.98px) { 
-
     .card-group {
-        display: block;
+        justify-content: center !important;
+        flex-flow:row wrap;
+
     }
-
-    .choice-card .card-link {
-        width: 25rem;
-        height: 25rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    
-.img-console {
-
-    width: 25rem;
-    height: 25rem;
-
-}
-
  }
 
 @media (max-width: 575.98px) { 
 
+    .card-group {
+        flex-flow:row wrap;
+    }
 
 }
