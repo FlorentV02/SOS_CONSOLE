@@ -13,19 +13,16 @@
 <section class="position-relative mt-5">
 
 
-
-
-
-
-
-<p id="send-note" class="text-center title-page display-4 my-5 playfair">Laissez un message</p>
-
 <?php  
 
 require('includes/insert.php');
 
 //$queryAppareil = $pdo->query()
 //$queryAppareil = "INSERT INTO `carouselle` (`Id_Carouselle`, `titre`, `texte`, `image`) VALUES (NULL, '$number', '$title', , '$txt' '$file')"; ?>
+
+
+<h1 id="send-note" class="text-center title-page display-4 my-5 playfair">Modifier des blocs</h1>
+
 
 <div id="block-formulaire" class="mb-5">
     <form id="formulaire" class="playfair p-3" method="post" action="">
@@ -34,27 +31,27 @@ require('includes/insert.php');
 
         <div class="mb-3 px-3 text-center w-100">
             <label for="exampleInputEmail1" class="form-label">
-              Titre du message <span class="text-danger font-weight-bold">*</span></label></label>
-            <input type="text" class="form-control form-style" id="Object" placeholder="Description" aria-describedby="emailHelp" name="title" required>
+                Titre du message <span class="text-danger font-weight-bold">*</span></label></label>
+            <input type="text" class="form-control form-style" id="Object" placeholder="Description" aria-describedby="emailHelp" name="titleNew" required>
         </div>
         <div class="form-floating mb-3 px-3">
-            <textarea class="form-control form-style" placeholder="Laissez votre message" id="txt" name="txt" aria-describedby="With textarea" style="height: 100px"></textarea>
+            <textarea class="form-control form-style" placeholder="Laissez votre message" id="txtNew" name="txtNew" aria-describedby="With textarea" style="height: 100px"></textarea>
             <label class="comments-label" for="floatingTextarea2"> Votre Message <span class="text-danger font-weight-bold">*</span></label></label>
         </div>
 
         <div class="d-flex justify-content-center">
-            <button type="submit" name="submit" class="btn btn-search btn-outline-success mb-3">Envoyer</button>
+            <button type="submit" name="submitNew" class="btn btn-search btn-outline-success mb-3">Envoyer</button>
         </div>
 
         <p class="text-danger mr-3">Champs obligatoire *</p>
 
-      </form>
-      
+    </form>
+
 </div>
 
 
 <div id="block-formulaire" class="mb-5">
-    <form id="formulaire" class="playfair p-3" method="post" action="">
+    <form enctype="multipart/form-data" id="formulaire" class="playfair p-3" method="post" action="">
 
     <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
 
@@ -78,15 +75,22 @@ require('includes/insert.php');
         <div>
             <div class="mb-3 px-3 text-center w-100">
             <label for="exampleFormControlFile1">Example file input</label>
-            <input type="file" class="form-control-file" name="uploadfile" id="exampleFormControlFile1">
-            <?php if(isset($errors['uploadfile'])){echo "<span class='text-danger'>" .$errors['uploadfile']. "</span>"; } ?>
+            <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+            <?php if(isset($errors['image'])){echo "<span class='text-danger'>" .$errors['image']. "</span>"; } ?>
 
             </div>
         </div>
 
 
+        <?php
+
+
+            ?>
+
+
+
         <div class="d-flex justify-content-center">
-            <button type="submit" name="submit" class="btn btn-search btn-outline-success mb-3">Envoyer</button>
+            <button type="submit" name="submit" value='Upload' class="btn btn-search btn-outline-success mb-3">Envoyer</button>
         </div>
 
         <p class="text-danger mr-3">Champs obligatoire *</p>

@@ -1,6 +1,18 @@
 <?php
 
 
+// ajout de new 
+
+if (isset($_POST['submitNew'])){
+    $titleNew = $_POST['titleNew'];
+    $txtNew = $_POST['txtNew'];
+
+    $updateNew = $pdo->query("UPDATE `bloc_news` SET `texte` = '$txtNew', `titre` = '$titleNew' WHERE `bloc_news`.`Id_bloc_new` = 1");
+
+    $updateNew->execute();
+
+}
+
 // ajout image
 
 if(isset($_POST['submit'])) {
@@ -9,48 +21,26 @@ if(isset($_POST['submit'])) {
     $title = $_POST['title'];
     $txt = $_POST['txt'];
 
+
     //$ImageName = str_replace(' ','-',strtolower($_FILES['image']['name'][0]));
 
 
-    //$file = $_FILES['image'];
+    $filename = $_FILES['image']['name'];
+    
     
     echo $number;
-}
-
-else{
-    echo 'Erreur';
-}
-
-$filename = $_FILES["uploadfile"]["name"];
-$tempname = $_FILES["uploadfile"]["tmp_name"];
-$folder = "./asset/images/" . $filename;
-
-echo $filename;
-
-if(isset($_POST['submit'])){
-
-    if(preg_match("/\S+/", $_FILES['uploadfile']) === 0){
-        $errors['uploadfile'] = "*The image field is required.";
-    }
-
-
     $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
-
     $extensions_arr = array("jpg","jpeg","png");
 
-    if(in_array($imageFileType,$extensions_arr) ){
-        if(move_uploaded_file($_FILES["uploadfile"]["tmp_name"],'c:/xampp/htdocs/upload/'.$filename)){
-            $insert = "INSERT INTO `carouselle` (`Id_Carouselle`, `titre`, `texte`, `image`) VALUES ('$number', '$title', '$txt', '$filename')";
-        
-            if(mysqli_query($conn, $insert)){
-                $successful = '<h5 class="alert alert-success">Image store successfully!</h5>';
-            }else{
-                echo 'Error: '.mysqli_error($conn);
-            }
-        }else{
-            echo 'Error in uploading file - '.$_FILES['uploadfile']['name'].'<br/>';
-        }
-    }
-} 
+    var_dump($filename);
+    var_dump($title);
+
+    $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = 'test.png'  WHERE `carouselle`.`Id_Carouselle` = $number");
+
+    $updateImage->execute();
+}
+
+// excution de la requete
+
 
 ?>
