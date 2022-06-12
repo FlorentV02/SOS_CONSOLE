@@ -169,7 +169,6 @@
                         </table>
                     
                 </div>
-
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn-devis btn-search btn-outline-success m-3 link-success text-center link-btn">
