@@ -20,10 +20,18 @@
       </div>
       
       <div id ="new" class="playfair py-4 px-4">
-        <p class="font-weight-bold text-center display-6"><?php echo $News['titre']; ?></p>
+        <p class="font-weight-bold text-center display-6">  
+        <?php if(empty($News['Id_Block_NEWS'])){
+            echo " ";
+          }
+          
+          else {
+            echo $News['titre'];
+          }?>    
+      </p>
         <p class='text-center font-weight-bold text-48 '>
-          <?php if(empty($News['texte'])){
-            echo " Aucune news pour l'instant ! ";
+          <?php if(empty($News['Id_Block_NEWS'])){
+            echo " ";
           }
           
           else {
