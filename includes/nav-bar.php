@@ -2,7 +2,7 @@
         <div id="background-body">
             <nav id="slider" class="navbar navbar-expand-lg fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php"><img src="./asset/images/icon/logo_sos_consoles.png"
+                    <a class="navbar-brand" href="index.php"><img src="./images/icon/logo_sos_consoles.png"
                             alt="SOS_CONSOLE"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

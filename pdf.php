@@ -1,5 +1,8 @@
 <?php 
 require('includes/bdd.php');
+include('librery/makefont/makefont.php');
+//MakeFont(MakeFont('asset/font/playfair_display/PlayfairDisplay-VariableFont_wght.ttf','cp1252'));
+//PlayfairDisplay-VariableFont_wght.ttf asset\font\playfair_display
 if($_POST['piece1'] == "" AND $_POST['piece2'] == "" AND $_POST['piece3'] == "" AND $_POST['piece4'] == "" 
 AND $_POST['piece5'] == "" AND $_POST['piece6'] == "" AND $_POST['piece7'] == "" AND $_POST['piece8'] == ""
 AND $_POST['piece9'] == "" AND $_POST['piece10'] == ""){
@@ -74,7 +77,7 @@ $pdf->SetFont('Arial','B',16);
 
 
 $pdf->Cell(0,10,"Votre devis de :" . " Votre appareil ",1,1,'C');
-$pdf->Cell(95,10,"Nom",1,0);
+$pdf->Cell(95,10,"Nom é",1,0);
 $pdf->Cell(95,10,"Prix",1,1);
 
 
@@ -83,12 +86,12 @@ $pdf->Cell(95,10,"Prix",1,1);
 foreach ($resultat as $key => $variable){ 
     
     $pdf->Cell(95,10,$resultat[$key]['type'],1,0);
-    $pdf->Cell(95,10,$resultat[$key]['prix'],1,1);
+    $pdf->Cell(95,10,$resultat[$key]['prix']. '	$',1,1);
 
 }
 
 $pdf->Cell(95,10,"Total",1,0);
-$pdf->Cell(95,10,$global['total'],1,1);
+$pdf->Cell(95,10,$global['total'].'€',1,1);
 
 
 

@@ -38,12 +38,12 @@
             
             //$recherche = $_GET['recherche'];
 
-            $request = $pdo->query("SELECT Id_Appareil, appelation FROM `Appareil`");
+            $request = $pdo->query("SELECT Id_Appareil, nom FROM `Appareil`");
 
             if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
                 $recherche = $_GET['recherche'];
                  // query affichage du titre
-                $title = $pdo->query('SELECT type_appareil.Id_type , appelation ,marque FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque JOIN `type_appareil` ON type_appareil.Id_type = marque.id_type WHERE appareil.nom LIKE "%'.$recherche.'%"');
+                $title = $pdo->query('SELECT type_appareil.Id_type , appareil.nom, appelation ,marque FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque JOIN `type_appareil` ON type_appareil.Id_type = marque.id_type WHERE appareil.nom LIKE "%'.$recherche.'%"');
 
                 // excution de la requete
 
@@ -56,7 +56,7 @@
 
                 // query appareil
 
-                $queryAppareil = $pdo->query('SELECT Id_appareil ,nom, marque ,image_presentation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.nom LIKE "%'.$recherche.'%"');
+                $queryAppareil = $pdo->query('SELECT Id_appareil ,nom, marque, logo FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.nom LIKE "%'.$recherche.'%"');
                 $count = $queryAppareil->rowCount();
 
                 // affichage appareil 
@@ -74,7 +74,7 @@
 
                 $appareil = $_POST['appareil'];
                 // query affichage du titre
-                $title = $pdo->query("SELECT type_appareil.Id_type, Id_Appareil, marque, appelation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque JOIN `type_appareil` ON type_appareil.Id_type = marque.id_type WHERE appareil.Id_Marque = $appareil");
+                $title = $pdo->query("SELECT type_appareil.Id_type, Id_Appareil, marque, appareil.nom, appelation, logo FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque JOIN `type_appareil` ON type_appareil.Id_type = marque.id_type WHERE appareil.Id_Marque = $appareil");
 
                 // excution de la requete
 
@@ -87,7 +87,7 @@
 
                 // query appareil
 
-                $queryAppareil = $pdo->query("SELECT Id_appareil ,nom, marque ,image_presentation FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.Id_Marque = $appareil");
+                $queryAppareil = $pdo->query("SELECT Id_appareil , nom, marque , logo FROM `marque` JOIN `Appareil` ON marque.Id_Marque = appareil.Id_Marque WHERE appareil.Id_Marque = $appareil");
                 $count = $queryAppareil->rowCount();
 
                 // affichage appareil 
@@ -134,7 +134,7 @@
                         {?>
                         <figure class="figure">
                             <button type="submit" value="<?php echo($resultatAppareil[$key]['Id_appareil']); ?>" name="appareil">
-                            <img id="img-phone-1" class="img" src="asset/images/<?php echo($resultatAppareil[$key]['image_presentation']); ?>" 
+                            <img id="img-phone-1" class="img" src="images/<?php echo($resultatAppareil[$key]['logo']); ?>" 
                             class="figure-img img-fluid rounded" alt="<?php echo($resultatAppareil[$key]['nom']); ?>"></button>
                             <figcaption id="caption-phone-1" class="figure-caption caption-style"><?php echo($resultatAppareil[$key]['nom']); ?>
                             </figcaption>

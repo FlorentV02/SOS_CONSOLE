@@ -24,8 +24,11 @@ if(isset($_POST['submit'])) {
 
     //$ImageName = str_replace(' ','-',strtolower($_FILES['image']['name'][0]));
 
-
+    if(isset($_FILES['image'])){
     $filename = $_FILES['image']['name'];
+    $tmpName = $_FILES['image']['tmp_name'];
+    $size = $_FILES['image']['size'];
+    $error = $_FILES['image']['error'];
     
     
     echo $number;
@@ -33,11 +36,13 @@ if(isset($_POST['submit'])) {
     $extensions_arr = array("jpg","jpeg","png");
 
     var_dump($filename);
-    var_dump($title);
+    var_dump($tmpName);
+    move_uploaded_file($tmpName, './upload/'.$filename );
 
     $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = 'test.png'  WHERE `carouselle`.`Id_Carouselle` = $number");
 
     $updateImage->execute();
+    }
 }
 
 // excution de la requete

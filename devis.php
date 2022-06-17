@@ -75,8 +75,8 @@
                 
                     $query = $pdo->query("SELECT piece.Id_piece, piece.type, piece.prix FROM piece where Id_Piece IN ($variables_joins)");
 
-                // Troisème request qui affichage le nom appareil
-                    $title = $pdo->query("SELECT appareil.nom, piece.Id_Appareil, Appareil.Id_Appareil a FROM `Piece` JOIN `Appareil` ON piece.Id_Appareil = Appareil.Id_Appareil WHERE piece.Id_Appareil = $appareil");
+                // Troisème request qui affichage le nom appareil et son image
+                    $title = $pdo->query("SELECT appareil.nom, piece.Id_Appareil, Appareil.Id_Appareil, appareil.image_presentation FROM `Piece` JOIN `Appareil` ON piece.Id_Appareil = Appareil.Id_Appareil WHERE piece.Id_Appareil = $appareil");
 
                 // envoie du resultat
 
@@ -127,7 +127,7 @@
             <div>
                 <div id="devis-header" class="d-flex mb-3 mx-3 justify-content-around align-items-center">
                     <img class="align-items-center" 
-                    src="asset/images/amazon-prime-day-deals-nintendo-switch-1562596166.webp" 
+                    src="images/<?php echo $rappel['image_presentation']; ?>" 
                     alt="" width="250" height="250">
                     <div id="bloc-appareil" class="px-5 playfair font-18">
                         <p class="color-green display-6">Appareil séléctionné :<input id="prodId1" name="appareil" type="hidden" value="<?php echo ($rappel['Id_appareil'])?>"> 

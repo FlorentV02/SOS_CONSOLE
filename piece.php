@@ -46,7 +46,7 @@
             $appareil = $_POST['appareil']; 
             
             // query affichage du titre
-            $title = $pdo->query("SELECT image_1 FROM `Appareil` JOIN `Piece` ON Appareil.Id_Appareil = Piece.Id_appareil WHERE appareil.Id_Marque = $appareil");
+            $title = $pdo->query("SELECT image_piece FROM `Appareil` JOIN `Piece` ON Appareil.Id_Appareil = Piece.Id_appareil WHERE appareil.Id_Marque = $appareil");
 
             // excution de la requete
 
@@ -58,7 +58,7 @@
             $ligne = $title->fetch(PDO::FETCH_ASSOC);
 
             
-            $query = $pdo->query("SELECT Id_Piece, piece.type, image_1, image_2, piece.Id_appareil FROM `piece` JOIN `Appareil` ON Appareil.Id_appareil = piece.Id_appareil WHERE piece.Id_appareil = $appareil");
+            $query = $pdo->query("SELECT Id_Piece, piece.type, piece.Id_appareil FROM `piece` JOIN `Appareil` ON Appareil.Id_appareil = piece.Id_appareil WHERE piece.Id_appareil = $appareil");
 
             // affichage appareil 
 
@@ -86,7 +86,7 @@
                       </div>
                   <?php } ?>
                 </div>
-                <div><img src ="./asset/images/<?php echo $ligne['image_1']?>" alt="Appareil" id="img-piece" class="my-3"/></div>
+                <div><img src ="images/<?php echo $ligne['image_piece']?>" alt="Appareil" id="img-piece" class="my-3"/></div>
               </div>
               <div class="d-flex justify-content-center">
                 <button class="btn-devis btn-search btn-outline-success mt-3 link-btn link-success" 

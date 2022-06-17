@@ -112,7 +112,7 @@
           ?>
           <button class="btn-no-style card-link card-bloc pb-2" name="type" type="submit" value="<?php echo($resultat[$key]['Id_type']); ?>">
             <div class="card bg-dark text-white bloc-card">
-              <img class="card-img" src="<?php echo'./asset/images/'.$resultat[$key]['image'];?>" alt="<?php print $resultat[$key]['appelation'] ?>">
+              <img class="card-img" src="<?php echo'./images/'.$resultat[$key]['image'];?>" alt="<?php print $resultat[$key]['appelation'] ?>">
               <div class="card-img-overlay">
                 <h5 class="card-title"><?php print $resultat[$key]['appelation'] ?></h5>
               </div>
