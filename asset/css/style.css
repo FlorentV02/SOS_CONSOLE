@@ -167,10 +167,10 @@ body {
 .navbar-trait {
     width: 30px;
     border: 1px solid #000000;
-    margin-top: 7px;
+    margin-top: 8px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #003369;
+    background-color: #000000;
 }
 
 /* nav-item-nav-bar and footer */

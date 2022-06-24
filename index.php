@@ -1,3 +1,4 @@
+
 <?php require('includes/head.php');
       require('includes/request-index.php')?>
 <link href="asset/css/accueil.css" rel="stylesheet">
@@ -48,11 +49,10 @@
         </div>
         <div class="carousel-inner">
           <?php foreach ($resultatCarousel as $key => $variable) 
-          
           ?>
           <div class="carousel-item active">
             <?php if(!empty($resultatCarousel[0]['Id_Carouselle'])){ ?>
-            <img src="asset/images/<?php if(!empty($resultatCarousel[0]['image'])){echo $resultatCarousel[0]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
+            <img src="images/<?php if(!empty($resultatCarousel[0]['image'])){echo $resultatCarousel[0]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php if(!empty($resultatCarousel[0]['titre'])){echo $resultatCarousel[0]['titre'];}?></h5>
               <p><?php if(!empty($resultatCarousel[0]['texte'])){echo $resultatCarousel[0]['titre'];}else{ echo ''; }?></p>
@@ -60,21 +60,21 @@
           </div>
           <?php } ?>
           <div class="carousel-item">
-            <img src="asset/images/<?php if(!empty($resultatCarousel[1]['image'])){echo $resultatCarousel[1]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
+            <img src="images/<?php if(!empty($resultatCarousel[1]['image'])){echo $resultatCarousel[1]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php if (!empty($resultatCarousel[1]['titre'])){echo $resultatCarousel[1]['titre'];} else{ echo ''; }?></h5>
               <p><?php if(!empty($resultatCarousel[1]['texte'])){echo $resultatCarousel[1]['titre'];}else{ echo ''; }?></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="asset/images/<?php if(!empty($resultatCarousel[2]['image'])){echo $resultatCarousel[2]['image'];}else{ echo $resultatCarousel[99]['image']; }?>" class="d-block h-30 w-100" alt="...">
+            <img src="images/<?php if(!empty($resultatCarousel[2]['image'])){echo $resultatCarousel[2]['image'];}else{ echo $resultatCarousel[99]['image']; }?>" class="d-block h-30 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php if(!empty($resultatCarousel[2]['titre'])){echo $resultatCarousel[2]['titre'];}else{ echo ''; }?></h5>
               <p><?php if(!empty($resultatCarousel[2]['texte'])){echo $resultatCarousel[2]['titre'];}else{ echo ''; }?></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="asset/images/<?php if(!empty($resultatCarousel[3]['image'])){echo $resultatCarousel[3]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
+            <img src="images/<?php if(!empty($resultatCarousel[3]['image'])){echo $resultatCarousel[3]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php if(!empty($resultatCarousel[3]['titre'])){echo $resultatCarousel[3]['titre'];}else{ echo ''; }?></h5>
               <p><?php if(!empty($resultatCarousel[3]['texte'])){echo $resultatCarousel[3]['titre'];}else{ echo ''; }?></p>

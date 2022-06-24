@@ -118,7 +118,7 @@
         </div>  
 
         <div id="block-formulaire">
-            <form action="pdf.php" method="post">
+            <form action="actions/pdf.php" method="post">
             
             <p class="text-center my-5 playfair title-page display-5">Votre récapitulatif</p>
 

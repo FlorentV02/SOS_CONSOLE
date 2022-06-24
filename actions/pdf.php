@@ -1,7 +1,8 @@
 <?php 
-require('includes/bdd.php');
-include('librery/makefont/makefont.php');
-//MakeFont(MakeFont('asset/font/playfair_display/PlayfairDisplay-VariableFont_wght.ttf','cp1252'));
+require('../includes/bdd.php');
+require('../librery/makefont/makefont.php');
+//MakeFont('C:\xampp\htdocs\dev\Stage\SOS_CONSOLES\librery\font\courier.php','cp1252');
+
 //PlayfairDisplay-VariableFont_wght.ttf asset\font\playfair_display
 if($_POST['piece1'] == "" AND $_POST['piece2'] == "" AND $_POST['piece3'] == "" AND $_POST['piece4'] == "" 
 AND $_POST['piece5'] == "" AND $_POST['piece6'] == "" AND $_POST['piece7'] == "" AND $_POST['piece8'] == ""
@@ -69,7 +70,7 @@ $number_of_products = $query->rowCount();
 $resultat = $query->fetchAll();
 $global = $query1->fetch(PDO::FETCH_ASSOC);
 
-require('librery/fpdf.php');
+require('../librery/fpdf.php');
 
 $pdf = new FPDF();
 $pdf->AddPage();
@@ -77,7 +78,7 @@ $pdf->SetFont('Arial','B',16);
 
 
 $pdf->Cell(0,10,"Votre devis de :" . " Votre appareil ",1,1,'C');
-$pdf->Cell(95,10,"Nom é",1,0);
+$pdf->Cell(95,10,"Nom ",1,0);
 $pdf->Cell(95,10,"Prix",1,1);
 
 
@@ -86,7 +87,7 @@ $pdf->Cell(95,10,"Prix",1,1);
 foreach ($resultat as $key => $variable){ 
     
     $pdf->Cell(95,10,$resultat[$key]['type'],1,0);
-    $pdf->Cell(95,10,$resultat[$key]['prix']. '	$',1,1);
+    $pdf->Cell(95,10,$resultat[$key]['prix']. '	€',1,1);
 
 }
 

@@ -39,9 +39,9 @@ if(isset($_POST['submit'])) {
 
     var_dump($filename);
     var_dump($tmpName);
-    move_uploaded_file($tmpName, './upload/'.$filename );
+    move_uploaded_file($tmpName, './images/'.$filename );
 
-    $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = 'test.png'  WHERE `carouselle`.`Id_Carouselle` = $number");
+    $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = '$filename '  WHERE `carouselle`.`Id_Carouselle` = $number");
 
     // excution de la requete
 
