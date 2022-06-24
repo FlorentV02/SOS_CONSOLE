@@ -7,11 +7,13 @@ if (isset($_POST['submitNew'])){
     $titleNew = $_POST['titleNew'];
     $txtNew = $_POST['txtNew'];
 
+
     $updateNew = $pdo->query("UPDATE `bloc_news` SET `texte` = '$txtNew', `titre` = '$titleNew' WHERE `bloc_news`.`Id_bloc_new` = 1");
 
     $updateNew->execute();
 
 }
+
 
 // ajout image
 
@@ -41,11 +43,15 @@ if(isset($_POST['submit'])) {
 
     $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = 'test.png'  WHERE `carouselle`.`Id_Carouselle` = $number");
 
+    // excution de la requete
+
+
     $updateImage->execute();
     }
 }
 
-// excution de la requete
+
+
 
 
 ?>

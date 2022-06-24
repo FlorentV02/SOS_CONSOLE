@@ -58,6 +58,14 @@ body {
     color: #00BFB2;
 }
 
+.color-red {
+    color: red;
+}
+
+.color-blue {
+    color:#003369
+}
+
 /* font-size */
 
 .text-2 {

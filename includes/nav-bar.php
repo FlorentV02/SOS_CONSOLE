@@ -14,9 +14,9 @@
                         </div>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center justify-content-center item-bar">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center justify-content-center mx-auto item-bar">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -30,18 +30,22 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" href="#">Notre page facebook</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled">Disabled</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Répérations
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="information.php">Consoles</a></li>
+                                    <li><a class="dropdown-item" href="contact.php">Smartephone</a></li>
+                                    <li><a class="dropdown-item" href="#"></a></li>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
-                        <form class="form-search-nav-bar d-flex" name="nav-recherche" method="post" action="">
-                            <input class="search-bar loupe form-control me-2" type="search"
-                                placeholder="Selection un appareil" aria-label="Search">
-                            <button class="btn btn-search btn-outline-success" type="submit">Recherche</button>
-                        </form>
                     </div>
                 </div>
             </nav>

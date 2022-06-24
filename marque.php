@@ -1,5 +1,8 @@
 <?php include 'includes/head.php';
 
+$marque = 'Aucun résultat';
+
+
 if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
     $recherche = $_GET['recherche'];
      // query affichage du titre
@@ -13,6 +16,15 @@ if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
     // envoie du resultat
 
     $ligne = $title->fetch(PDO::FETCH_ASSOC);
+
+    // Modfication du titre qui prend le nom de la marque sélectionné
+
+
+
+    if($ligne['marque'] == !NULL){
+        $marque = $ligne['marque'];
+    }
+
 
     // query affichage marque
 
@@ -39,7 +51,11 @@ if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
 
     $title->execute();
 
+
     $ligne = $title->fetch(PDO::FETCH_ASSOC);
+
+    $marque = $ligne['appelation'];
+
 
     $query = $pdo->query("SELECT Id_Marque, marque, marque.image 
     FROM `Marque` JOIN `Type_appareil`
@@ -59,7 +75,7 @@ if(isset($_GET['recherche']) AND !empty($_GET['recherche'])) {
     ?>
 
     <link href="asset/css/phone.css" rel="stylesheet">
-    <title>SOS CONSOLES</title>
+    <title><?php echo $webTitle.$marque ?> </title>
 </head>
 <body>
     <?php require('includes/nav-bar.php'); ?>

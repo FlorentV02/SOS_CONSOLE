@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
 <?php require('includes/head.php');
       require('includes/request-index.php')?>
 <link href="asset/css/accueil.css" rel="stylesheet">
-<title>SOS CONSOLES</title>
-
+<title><?php echo $webTitle.'Accueil' ?> </title>
 </head>
   <body>
 <?php require('includes/nav-bar.php'); ?>
@@ -13,16 +10,16 @@
       <div id ="header" class="text-center">
         <div id ="background-entete" class="playfair position-relative">
           <div id="entete-text" class="playfair">
-            <h2 class="display-2 text-shadow">Reparation de console et de smartephone</h2>
-            <span class="display-6 text-shadow">Phrase d'accroche à déterminer</span>
+            <h1 class="display-2 text-shadow"><span class="color-red">SOS</span> <span class="color-blue">CONSOLES</span></h1>
+            <h2 class="display-6 pt-5 text-shadow">Réparateur de console et de smartephone</h2>
           </div> 
         </div>
       </div>
       
       <div id ="new" class="playfair py-4 px-4">
         <p class="font-weight-bold text-center display-6">  
-        <?php if(empty($News['Id_Block_NEWS'])){
-            echo " ";
+        <?php if(empty($News['titre'])){
+            echo " Aucune News pour l'instant ";
           }
           
           else {
@@ -30,7 +27,7 @@
           }?>    
       </p>
         <p class='text-center font-weight-bold text-48 '>
-          <?php if(empty($News['Id_Block_NEWS'])){
+          <?php if(empty($News['texte'])){
             echo " ";
           }
           
@@ -112,9 +109,9 @@
           ?>
           <button class="btn-no-style card-link card-bloc pb-2" name="type" type="submit" value="<?php echo($resultat[$key]['Id_type']); ?>">
             <div class="card bg-dark text-white bloc-card">
-              <img class="card-img" src="<?php echo'./images/'.$resultat[$key]['image'];?>" alt="<?php print $resultat[$key]['appelation'] ?>">
+              <img class="card-img" src="<?php echo'./images/'.$resultat[$key]['image'];?>" alt="<?php echo $resultat[$key]['appelation'] ?>">
               <div class="card-img-overlay">
-                <h5 class="card-title"><?php print $resultat[$key]['appelation'] ?></h5>
+                <h5 class="card-title"><?php echo $resultat[$key]['appelation'] ?></h5>
               </div>
             </div>
           </button>

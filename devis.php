@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
     <?php require('includes/head.php');
 
         // Démarre la temporisation de sortie. Tant qu'elle est enclenchée, 

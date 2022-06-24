@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
 <?php require('includes/head.php');
       ?>
 <link href="asset/css/accueil.css" rel="stylesheet">
@@ -46,6 +44,28 @@ require('includes/insert.php');
         <p class="text-danger mr-3">Champs obligatoire *</p>
 
     </form>
+
+    <form method="post" action="">        
+        <div class="d-flex justify-content-center">
+            <button type="submit" name="deleteItem" value="1" class="btn btn-search btn-outline-success mb-3">Envoyer</button>
+        </div>
+    </form>
+
+    <?php
+    
+    // Requête de supression de donnée en PHP 
+
+if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
+{
+    $delete = $_POST['deleteItem'];
+    $deleteImage = $pdo->query("DELETE FROM `bloc_news` where `Id_Block_NEWS` = $delete"); 
+    $deleteImage->execute();
+
+
+  echo "ça marche";
+  var_dump($delete);
+}
+    ?>
 
 </div>
 

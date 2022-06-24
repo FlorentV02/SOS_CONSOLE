@@ -1,8 +1,5 @@
-<?php  
-
-$icon = 'logo_sos_consoles.png';
-?>
-
+<?php  $icon = 'logo_sos_consoles.png';
+$webTitle = 'SOS CONSOLES - '; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

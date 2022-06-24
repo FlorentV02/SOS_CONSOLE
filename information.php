@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
 <?php require('includes/head.php');?>
 <link href="asset/css/information.css" rel="stylesheet">
 <title>SOS CONSOLES</title>
