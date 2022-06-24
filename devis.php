@@ -171,7 +171,7 @@
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn-devis btn-search btn-outline-success m-3 link-success text-center link-btn">
                 Obtenir un devis</button>
-                    <input id="prodId" name="appareil" type="hidden" value="<?php echo ($resultat[$key]['Id_appareil'])?>">
+                    <input id="prodId" name="appareil" type="hidden" value="<?php echo $rappel['Id_Appareil']?>">
             </form>
             </div>
         </div>

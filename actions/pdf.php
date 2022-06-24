@@ -1,9 +1,7 @@
 <?php 
 require('../includes/bdd.php');
 require('../librery/makefont/makefont.php');
-//MakeFont('C:\xampp\htdocs\dev\Stage\SOS_CONSOLES\librery\font\courier.php','cp1252');
-
-//PlayfairDisplay-VariableFont_wght.ttf asset\font\playfair_display
+//MakeFont('C:\xampp\htdocs\dev\Stage\SOS_CONSOLES\librery\font\PlayfairDisplay-VariableFont_wght.ttf','cp1252');
 if($_POST['piece1'] == "" AND $_POST['piece2'] == "" AND $_POST['piece3'] == "" AND $_POST['piece4'] == "" 
 AND $_POST['piece5'] == "" AND $_POST['piece6'] == "" AND $_POST['piece7'] == "" AND $_POST['piece8'] == ""
 AND $_POST['piece9'] == "" AND $_POST['piece10'] == ""){
@@ -32,8 +30,16 @@ AND $_POST['piece9'] == "" AND $_POST['piece10'] == ""){
         //session_start();
 
         // Récupération de l'ID de l'appareil
-        $_SESSION['appareil'] = $_POST['appareil'];
-        $appareil = $_SESSION['appareil'] ; 
+
+
+
+
+        if(!empty($_POST['appareil'])){
+            $appareil = $_POST['appareil'];
+            $title = $pdo->query("SELECT nom, image_presentation FROM `appareil` WHERE `Id_Appareil` = $appareil;");
+            $title->execute();
+            $rappel = $title->fetch(PDO::FETCH_ASSOC);
+        }
 
     // Verification des checkbox si elles sont selectionnés
 
@@ -72,12 +78,18 @@ $global = $query1->fetch(PDO::FETCH_ASSOC);
 
 require('../librery/fpdf.php');
 
+
+
 $pdf = new FPDF();
 $pdf->AddPage();
-$pdf->SetFont('Arial','B',16);
+
+// addFont
+$fontName = "PlayfairDisplay-Regular";
+$pdf->AddFont($fontName,'','PlayfairDisplay-VariableFont_wght.php', true);
+$pdf->SetFont($fontName,'',16,);
 
 
-$pdf->Cell(0,10,"Votre devis de :" . " Votre appareil ",1,1,'C');
+$pdf->Cell(0,10,"Votre devis de : g" . $rappel['nom'],1,1,'B');
 $pdf->Cell(95,10,"Nom ",1,0);
 $pdf->Cell(95,10,"Prix",1,1);
 
@@ -87,25 +99,13 @@ $pdf->Cell(95,10,"Prix",1,1);
 foreach ($resultat as $key => $variable){ 
     
     $pdf->Cell(95,10,$resultat[$key]['type'],1,0);
-    $pdf->Cell(95,10,$resultat[$key]['prix']. '	€',1,1);
+    $pdf->Cell(95,10,$resultat[$key]['prix']. $_POST['appareil'].'	€',1,1);
 
 }
 
 $pdf->Cell(95,10,"Total",1,0);
 $pdf->Cell(95,10,$global['total'].'€',1,1);
 
-
-
-
-
-
-
-//$pdf->Cell(40,10, $dev2);
-//$pdf->Cell(40,10, $dev3);
-//$pdf->Cell(40,10, $dev4);
-//$pdf->Cell(40,10, $dev5);
-//$pdf->Cell(40,10, $dev6);
-//$pdf->Cell(40,10, $dev7);
 
 $pdf->Output();
 
