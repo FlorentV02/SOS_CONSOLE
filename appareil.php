@@ -5,15 +5,12 @@
 <body>
     <?php require('includes/nav-bar.php'); ?>
 
-    <section id="content" class="container">
-        <div id="header" class="text-center">
-            <div id="background-entete" class="playfair position-relative">
-                <div id="entete-text" class="playfair">
-                    <h2 class="text-48 text-shadow">Reparation de console et de smartephone</h2>
-                    <span class="text-36 text-shadow">Phrase d'accroche à déterminer</span>
-                </div>
-            </div>
-        </div>
+    <div id="content" class="container">
+
+ <?php require('includes/imageHeader.php')?>
+
+    <main>
+
 
         <div id="border-bloc">
 
@@ -155,8 +152,8 @@
             </div>
             </form>
         </div>
-
-    </section>
+        </main>
+    </div>
 
     <?php require('includes/footer.php'); ?>
 </html>

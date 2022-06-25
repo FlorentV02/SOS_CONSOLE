@@ -5,19 +5,13 @@
     <link href="asset/css/piece.css" rel="stylesheet">
 </head>
 <body>
-    <?php require('includes/nav-bar.php'); ?>
+    <?php require('includes/nav-bar.php');?>
+    <div id="content" class="container">
 
-</head>
-  <body>
-    <section id="content" class="container pb-5">
-        <div id ="header" class="text-center">
-          <div id ="background-entete" class="playfair position-relative">
-            <div id="entete-text" class="playfair">
-              <h2 class="display-2 text-shadow">Reparation de console et de smartephone</h2>
-              <span class="text-36 text-shadow">Phrase d'accroche à déterminer</span>
-              </div> 
-        </div>
+    <?php require('includes/imageHeader.php')?>
 
+    <main>
+    
     <div class="pt-5">
 
       <div>
@@ -97,7 +91,8 @@
           </div>
 
         </div>
-    </section>
+        </main>
+      </div>
     
     <?php require('includes/footer.php'); ?>
 

@@ -5,17 +5,13 @@
 <title><?php echo $webTitle.'Accueil' ?> </title>
 </head>
   <body>
-<?php require('includes/nav-bar.php'); ?>
+<?php require('includes/nav-bar.php');?>
 
-    <section id="content" class="container">
-      <div id ="header" class="text-center">
-        <div id ="background-entete" class="playfair position-relative">
-          <div id="entete-text" class="playfair">
-            <h1 class="display-2 text-shadow"><span class="color-red">SOS</span> <span class="color-blue">CONSOLES</span></h1>
-            <h2 class="display-6 pt-5 text-shadow">Réparateur de console et de smartephone</h2>
-          </div> 
-        </div>
-      </div>
+<div id="content" class="container">
+
+ <?php require('includes/imageHeader.php')?>
+
+    <main>
       
       <div id ="new" class="playfair py-4 px-4">
         <p class="font-weight-bold text-center display-6">  
@@ -97,10 +93,6 @@
 
         <h2 class="title-page display-4">Choisir votre appareil</h2>
 
-      <?php
-      
-
-      ?>
         <form action="marque.php" method="post">
         <div class="card-group d-flex justify-content-center choice-card py-2">
           <?php
@@ -121,8 +113,9 @@
           </div>
         </form>
 
+    </main>
 
-    </section>
+</div>
     
    <?php require('includes/footer.php'); ?>
   </body>
