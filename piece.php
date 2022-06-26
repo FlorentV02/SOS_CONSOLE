@@ -63,7 +63,7 @@
 
 
             // 
-            
+            $query->fetchAll();
           ?>
 
 
@@ -73,7 +73,7 @@
                   <?php $i=0;
                   foreach ($resultat as $key => $variable){$i =$i+1;?>
                       <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="<?php echo 'piece'.$i ?>" value="<?php echo($resultat[$key]['Id_Piece']); ?>" id="<?php echo 'flexCheckDefault'.$i?>">
+                          <input class="form-check-input checkbox-color" type="checkbox" name="<?php echo 'piece'.$i ?>" value="<?php echo($resultat[$key]['Id_Piece']); ?>" id="<?php echo 'flexCheckDefault'.$i?>">
                           <input id="prodId" name="appareil" type="hidden" value="<?php echo ($resultat[$key]['Id_appareil'])?>">
                           <label class="form-check-label source-pro-sans" for="flexCheckDefault">
                           <?php echo($resultat[$key]['type']);?>

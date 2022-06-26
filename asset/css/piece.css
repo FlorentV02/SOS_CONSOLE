@@ -23,6 +23,11 @@
     width: 20vw;
 }
 
+.checkbox-color:checked {
+    background-color: #00BFB2!important;
+    border-color: #00BFB2!important;
+}
+
 #arrow {
     display: none;
 }

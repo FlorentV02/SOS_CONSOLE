@@ -150,6 +150,12 @@ body {
     color: #00BFB2 !important;
 }
 
+/* padding-top for the content under nav-var */
+
+.padding-top {
+    padding-top:7rem
+}
+
 
 /* content header*/
 

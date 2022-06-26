@@ -10,35 +10,16 @@
 
     <?php include('includes/nav-bar.php'); ?>
 
+    <section class="padding-top">
 
-    <section>
+        <h2 id="send-note" class="text-center title-page display-4 my-5 playfair">OUUPPPSSS </h2>
 
-
-        <div id="block-formulaire" class="my-5">
-
-          <p id="last" class="text-center title-page display-4 my-3 playfair">Dernière étape</p>
-          <p id="mail" class="text-center my-3 source-pro-sans">
-            Pour recevoir votre devis, vous devez indiqué une adresse email, le devis sera envoyé directement à l'adresse noté</p>
-
-          
         
-          <form id="formulaire" class="source-pro-sans">
-          
-            <div class="mb-3 px-3 text-center w-100">
-                <label for="exampleInputEmail1" class="form-label">
-                  Indiqué votre adresse email <span class="text-danger font-weight-bold">*</span></label></label>
-                <input type="text" class="form-control form-style" id="mail" placeholder="Votre email"  aria-describedby="emailHelp">
-            </div>
 
-            <div class="d-flex justify-content-center">
-                <button type="submit" name="envoyer" class="btn btn-search btn-outline-success playfair">Téléchargez</button>
-            </div>
-          </form>
-          
-          <p class="text-danger text-right">Champs obligatoire *</p>
+        <div id="block-formulaire" class="mb-5">
 
-    </div>
-        
+        <h1 class="playfair title-page text-center py-5">Erreur 404 !</h1>
+              <p class="playfair text-center py-5">Ne vous en faite pas vous allez êtes rediriger !</p>
         </div>
     </section>
     

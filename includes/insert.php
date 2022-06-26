@@ -42,8 +42,6 @@ if(isset($_POST['submit'])) {
     $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
     $extensions_arr = array("jpg","jpeg","png");
 
-    var_dump($filename);
-    var_dump($tmpName);
     move_uploaded_file($tmpName, './images/'.$filename );
 
     $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = '$filename '  WHERE `carouselle`.`Id_Carouselle` = $number");

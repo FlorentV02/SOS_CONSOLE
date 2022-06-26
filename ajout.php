@@ -102,7 +102,28 @@ if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
 
             </div>
         </div>
+        
 
+        <div class="">
+            <div class="mb-3 px-3 text-center w-100">
+                <label for="mark" class="form-label">
+                    Marque <span class="text-danger font-weight-bold">*</span>
+                </label>
+                <input type="text" class="form-control form-style" id="Number" name="Number" placeholder="Le numéro / ordre de l'image" aria-describedby="firstNameHelp">
+            </div>
+        </div>
+        <div class="mb-3 px-3 text-center w-100">
+            <label for="exampleInputEmail1" class="form-label">
+              Titre du message <span class="text-danger font-weight-bold">*</span></label></label>
+            <input type="text" class="form-control form-style" id="Object" placeholder="Description" aria-describedby="emailHelp" name="title" required>
+        </div>
+        <div class="form-floating mb-3 px-3">
+            <textarea class="form-control form-style" placeholder="Leave a comment here" id="txt" name="txt" style="height: 100px"></textarea>
+            <label class="comments-label" for="floatingTextarea2">Message <span class="text-danger font-weight-bold">*</span></label></label>
+        </div>
+        <div>
+
+        </div>
 
         <?php
 
@@ -126,13 +147,9 @@ if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
 
     <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
 
-        <div class="">
-            <div class="mb-3 px-3 text-center w-100">
-                <label for="FirstName" class="form-label">
-                    Numéro de l'image <span class="text-danger font-weight-bold">*</span>
-                </label>
-                <input type="number" class="form-control form-style" id="Number" name="Number" placeholder="Le numéro / ordre de l'image" aria-describedby="firstNameHelp">
-            </div>
+        <div class="mb-3 px-3 text-center w-100">
+                <label for="Name" class="form-label">Nom</label>
+                <input type="text" class="form-control form-style" id="Name" name="mark" placeholder="Votre nom" aria-describedby="NameHelp">
         </div>
         <div class="mb-3 px-3 text-center w-100">
             <label for="exampleInputEmail1" class="form-label">

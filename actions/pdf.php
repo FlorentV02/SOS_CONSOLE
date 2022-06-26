@@ -89,10 +89,9 @@ $pdf->AddFont($fontName,'','PlayfairDisplay-VariableFont_wght.php', true);
 $pdf->SetFont($fontName,'',16,);
 
 
-$pdf->Cell(0,10,"Votre devis de : g" . $rappel['nom'],1,1,'B');
+$pdf->Cell(0,10,"Votre devis de : " . $rappel['nom'],1,1,'B');
 $pdf->Cell(95,10,"Nom ",1,0);
 $pdf->Cell(95,10,"Prix",1,1);
-
 
 
 
@@ -100,6 +99,18 @@ foreach ($resultat as $key => $variable){
     
     $pdf->Cell(95,10,$resultat[$key]['type'],1,0);
     $pdf->Cell(95,10,$resultat[$key]['prix']. $_POST['appareil'].'	€',1,1);
+
+    $htmlTable='<TABLE>
+<TR>
+<TD>Name:</TD>
+<TD>test</TD>
+</TR>
+<TR>
+<TD>Email:</TD>
+<TD>test</TD>
+</TR>
+</TABLE>';
+
 
 }
 
