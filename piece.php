@@ -12,9 +12,9 @@
 
     <main>
     
-    <div class="pt-5">
+    <div class="pt-5 text-center">
 
-      <div>
+      <div class="text-center">
         <div class="d-flex align-items-center justify-content-center mx-2">
           <div class="circle-in-validate"></div>
           <div class="trait-validate"></div>
@@ -24,6 +24,7 @@
           <div class="trait-empty"></div>
           <div class="circle-empty"></div>
         </div>
+        <small style="color:grey; font-size:7px;">L'auteur est du symbole validé est <a href="https://creativecommons.org/licenses/by/3.0/legalcode">Creative Common BY</a></small>
       </div>       
 
         <div id="phone-block">
