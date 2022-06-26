@@ -45,6 +45,8 @@ require('includes/insert.php');
 
     </form>
 
+    <?php echo $error; ?>
+
     <form method="post" action="">        
         <div class="d-flex justify-content-center">
             <button type="submit" name="deleteItem" value="1" class="btn btn-search btn-outline-success mb-3">Envoyer</button>

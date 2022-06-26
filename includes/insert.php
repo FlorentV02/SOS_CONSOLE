@@ -3,15 +3,20 @@
 
 // ajout de new 
 
-if (isset($_POST['submitNew'])){
+if (isset($_POST['submitNew']) AND !empty($_POST['titleNew']) AND !empty($_POST['txtNew'])){
     $titleNew = $_POST['titleNew'];
     $txtNew = $_POST['txtNew'];
+    $error ="Les news ont étés modifiés";
 
 
-    $updateNew = $pdo->query("UPDATE `bloc_news` SET `texte` = '$txtNew', `titre` = '$titleNew' WHERE `bloc_news`.`Id_bloc_new` = 1");
+    $updateNew = $pdo->query("UPDATE `bloc_news` SET `texte` = '$txtNew' , `titre` = '$titleNew' WHERE `bloc_news`.`Id_Block_NEWS` = 1");
 
     $updateNew->execute();
 
+}
+
+else{
+    $error ="Une erreur est survenu";
 }
 
 

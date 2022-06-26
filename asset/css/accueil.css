@@ -76,16 +76,6 @@
     border: 11px solid #00BFB2;
 }
 
-.choice-card .card-link {
-    /*max-width: 35rem;
-    width: 35vw;
-    margin-left: 0;
-    justify-content: center;
-    text-decoration: none;
-    padding-left: 1rem;
-    */
-}
-
 .card-link:hover{
     text-decoration: underline white;
 }

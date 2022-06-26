@@ -263,7 +263,7 @@ body {
     width: 30px;
 }
 
-/* recherche-btn */
+/* btn search */
 
 
 
@@ -307,6 +307,10 @@ body {
     background-position: 0.5vw;
 
 }
+
+
+/* btn back to the last page */ 
+
 
 
 @media (max-width: 991.98px) { 
