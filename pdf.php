@@ -83,7 +83,7 @@ $pdf->Cell(95,10,"Prix",1,1);
 foreach ($resultat as $key => $variable){ 
     
     $pdf->Cell(95,10,$resultat[$key]['type'],1,0);
-    $pdf->Cell(95,10,$resultat[$key]['prix'],1,1);
+    $pdf->Cell(95,10,$resultat[$key]['prix'] . '€',1,1);
 
 }
 
