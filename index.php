@@ -1,29 +1,31 @@
-<!DOCTYPE html>
-<html lang="fr">
+
 <?php require('includes/head.php');
       require('includes/request-index.php')?>
 <link href="asset/css/accueil.css" rel="stylesheet">
-<title>SOS CONSOLES</title>
-
+<title><?php echo $webTitle.'Accueil' ?> </title>
 </head>
   <body>
-<?php require('includes/nav-bar.php'); ?>
+<?php require('includes/nav-bar.php');?>
 
-    <section id="content" class="container">
-      <div id ="header" class="text-center">
-        <div id ="background-entete" class="playfair position-relative">
-          <div id="entete-text" class="playfair">
-            <h2 class="display-2 text-shadow">Reparation de console et de smartephone</h2>
-            <span class="display-6 text-shadow">Phrase d'accroche à déterminer</span>
-          </div> 
-        </div>
-      </div>
+<div id="content" class="container">
+
+ <?php include('includes/imageHeader.php')?>
+
+    <main>
       
       <div id ="new" class="playfair py-4 px-4">
-        <p class="font-weight-bold text-center display-6"><?php echo $News['titre']; ?></p>
+        <p class="font-weight-bold text-center display-6">  
+        <?php if(empty($News['titre'])){
+            echo " Aucune News pour l'instant ";
+          }
+          
+          else {
+            echo $News['titre'];
+          }?>    
+      </p>
         <p class='text-center font-weight-bold text-48 '>
           <?php if(empty($News['texte'])){
-            echo " Aucune news pour l'instant ! ";
+            echo " ";
           }
           
           else {
@@ -42,12 +44,10 @@
 
         </div>
         <div class="carousel-inner">
-          <?php foreach ($resultatCarousel as $key => $variable) 
-          
-          ?>
+
           <div class="carousel-item active">
             <?php if(!empty($resultatCarousel[0]['Id_Carouselle'])){ ?>
-            <img src="asset/images/<?php if(!empty($resultatCarousel[0]['image'])){echo $resultatCarousel[0]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
+            <img src="images/<?php if(!empty($resultatCarousel[0]['image'])){echo $resultatCarousel[0]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="<?php if (!empty($resultatCarousel[0]['titre'])){echo $resultatCarousel[0]['titre'];} else{ echo ''; }?>">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php if(!empty($resultatCarousel[0]['titre'])){echo $resultatCarousel[0]['titre'];}?></h5>
               <p><?php if(!empty($resultatCarousel[0]['texte'])){echo $resultatCarousel[0]['titre'];}else{ echo ''; }?></p>
@@ -55,21 +55,21 @@
           </div>
           <?php } ?>
           <div class="carousel-item">
-            <img src="asset/images/<?php if(!empty($resultatCarousel[1]['image'])){echo $resultatCarousel[1]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
+            <img src="images/<?php if(!empty($resultatCarousel[1]['image'])){echo $resultatCarousel[1]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="<?php if (!empty($resultatCarousel[1]['titre'])){echo $resultatCarousel[1]['titre'];} else{ echo ''; } ?>">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php if (!empty($resultatCarousel[1]['titre'])){echo $resultatCarousel[1]['titre'];} else{ echo ''; }?></h5>
               <p><?php if(!empty($resultatCarousel[1]['texte'])){echo $resultatCarousel[1]['titre'];}else{ echo ''; }?></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="asset/images/<?php if(!empty($resultatCarousel[2]['image'])){echo $resultatCarousel[2]['image'];}else{ echo $resultatCarousel[99]['image']; }?>" class="d-block h-30 w-100" alt="...">
+            <img src="images/<?php if(!empty($resultatCarousel[2]['image'])){echo $resultatCarousel[2]['image'];}else{ echo $resultatCarousel[99]['image']; }?>" class="d-block h-30 w-100" alt="<?php if (!empty($resultatCarousel[2]['titre'])){echo $resultatCarousel[2]['titre'];} else{ echo ''; } ?>">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php if(!empty($resultatCarousel[2]['titre'])){echo $resultatCarousel[2]['titre'];}else{ echo ''; }?></h5>
               <p><?php if(!empty($resultatCarousel[2]['texte'])){echo $resultatCarousel[2]['titre'];}else{ echo ''; }?></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="asset/images/<?php if(!empty($resultatCarousel[3]['image'])){echo $resultatCarousel[3]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="...">
+            <img src="images/<?php if(!empty($resultatCarousel[3]['image'])){echo $resultatCarousel[3]['image'];}else{echo $resultatCarousel[99]['image'];} ?>" class="d-block h-30 w-100" alt="<?php if (!empty($resultatCarousel[3]['titre'])){echo $resultatCarousel[3]['titre'];} else{ echo ''; } ?>">
             <div class="carousel-caption d-none d-md-block">
               <h5><?php if(!empty($resultatCarousel[3]['titre'])){echo $resultatCarousel[3]['titre'];}else{ echo ''; }?></h5>
               <p><?php if(!empty($resultatCarousel[3]['texte'])){echo $resultatCarousel[3]['titre'];}else{ echo ''; }?></p>
@@ -92,10 +92,6 @@
 
         <h2 class="title-page display-4">Choisir votre appareil</h2>
 
-      <?php
-      
-
-      ?>
         <form action="marque.php" method="post">
         <div class="card-group d-flex justify-content-center choice-card py-2">
           <?php
@@ -104,9 +100,9 @@
           ?>
           <button class="btn-no-style card-link card-bloc pb-2" name="type" type="submit" value="<?php echo($resultat[$key]['Id_type']); ?>">
             <div class="card bg-dark text-white bloc-card">
-              <img class="card-img" src="<?php echo'./asset/images/'.$resultat[$key]['image'];?>" alt="<?php print $resultat[$key]['appelation'] ?>">
+              <img class="card-img" src="<?php echo'./images/'.$resultat[$key]['image'];?>" alt="<?php echo $resultat[$key]['appelation'] ?>">
               <div class="card-img-overlay">
-                <h5 class="card-title"><?php print $resultat[$key]['appelation'] ?></h5>
+                <h5 class="card-title"><?php echo $resultat[$key]['appelation'] ?></h5>
               </div>
             </div>
           </button>
@@ -116,8 +112,9 @@
           </div>
         </form>
 
+    </main>
 
-    </section>
+</div>
     
    <?php require('includes/footer.php'); ?>
   </body>

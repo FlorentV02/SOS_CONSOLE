@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
     <?php require('includes/head.php');
 
         // Démarre la temporisation de sortie. Tant qu'elle est enclenchée, 
@@ -75,8 +73,8 @@
                 
                     $query = $pdo->query("SELECT piece.Id_piece, piece.type, piece.prix FROM piece where Id_Piece IN ($variables_joins)");
 
-                // Troisème request qui affichage le nom appareil
-                    $title = $pdo->query("SELECT appareil.nom, piece.Id_Appareil, Appareil.Id_Appareil a FROM `Piece` JOIN `Appareil` ON piece.Id_Appareil = Appareil.Id_Appareil WHERE piece.Id_Appareil = $appareil");
+                // Troisème request qui affichage le nom appareil et son image
+                    $title = $pdo->query("SELECT appareil.nom, piece.Id_Appareil, Appareil.Id_Appareil, appareil.image_presentation FROM `Piece` JOIN `Appareil` ON piece.Id_Appareil = Appareil.Id_Appareil WHERE piece.Id_Appareil = $appareil");
 
                 // envoie du resultat
 
@@ -97,37 +95,35 @@
   <body>
   <?php 
   require('includes/nav-bar.php'); ?>
-    <section id="content" class="container pb-5">
-        <div id ="header" class="text-center">
-            <div id ="background-entete" class="playfair position-relative">
-                <div id="entete-text" class="playfair">
-                    <h2 class="text-48 text-shadow">Reparation de console et de smartephone</h2>
-                    <span class="text-36 text-shadow">Phrase d'accroche à déterminer</span>
-                </div> 
-            </div>
-        </div>
+  <div id="content" class="container">
 
-        <div>
+<?php require('includes/imageHeader.php')?>
+
+   <main>
+
+
+        <div class="text-center">
             <div class="d-flex align-items-center justify-content-center my-5">
                 <div class="circle-in-validate"> </div>
-                <div class="trait-validate"></div>
+                    <div class="trait-validate"></div>
                 <div class="circle-in-validate"> </div>
                 <div class="trait-validate"></div>
                 <div class="circle-in-validate"></div>
                 <div class="trait-validate"></div>
                 <div class="circle-in-progess"></div>
             </div>
+            <small style="color:grey; font-size:7px;">L'auteur est du symbole validé est <a href="https://creativecommons.org/licenses/by/3.0/legalcode">Creative Common BY</a></small>
         </div>  
 
         <div id="block-formulaire">
-            <form action="pdf.php" method="post">
+            <form action="actions/pdf.php" method="post">
             
             <p class="text-center my-5 playfair title-page display-5">Votre récapitulatif</p>
 
             <div>
                 <div id="devis-header" class="d-flex mb-3 mx-3 justify-content-around align-items-center">
                     <img class="align-items-center" 
-                    src="asset/images/amazon-prime-day-deals-nintendo-switch-1562596166.webp" 
+                    src="images/<?php echo $rappel['image_presentation']; ?>" 
                     alt="" width="250" height="250">
                     <div id="bloc-appareil" class="px-5 playfair font-18">
                         <p class="color-green display-6">Appareil séléctionné :<input id="prodId1" name="appareil" type="hidden" value="<?php echo ($rappel['Id_appareil'])?>"> 
@@ -172,15 +168,35 @@
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn-devis btn-search btn-outline-success m-3 link-success text-center link-btn">
-                Obtenir un devis</button>
-                    <input id="prodId" name="appareil" type="hidden" value="<?php echo ($resultat[$key]['Id_appareil'])?>">
+                Obtenir un devis en Pdf</button>
+                    <input id="prodId" name="appareil" type="hidden" value="<?php echo $rappel['Id_Appareil']?>">
             </form>
             </div>
+
+
+            <p id="last" class="text-center title-page h1 my-3 playfair">Vous pouvez recevoir votre devis par mail</p>
+            <p id="mail" class="text-center my-3 source-pro-sans">
+             Pour recevoir votre devis, vous pouvez indiquer une adresse email, le devis sera envoyé directement à l'adresse notée</p>
+
+             <form id="formulaire" method="post" action="confirmation-devis.php" class="source-pro-sans">
+
+  <div class="mb-3 px-3 text-center w-100">
+      <label for="exampleInputEmail1" class="form-label">
+        Indiquez votre adresse email ci-dessous  <span class="text-danger font-weight-bold">*</span></label></label>
+      <input type="text" class="form-control form-style" id="mail" placeholder="Votre email"  aria-describedby="emailHelp">
+  </div>
+
+  <div class="d-flex justify-content-center">
+      <button type="submit" name="envoyer" class="btn btn-search btn-outline-success playfair">Envoiez l'email</button>
+  </div>
+</form>
+
+<p class="text-danger text-right">Champs obligatoire *</p>
         </div>
 
             
-
-    </section>
+            </main>
+        </div>
     
     <?php require('includes/footer.php'); ?>
 

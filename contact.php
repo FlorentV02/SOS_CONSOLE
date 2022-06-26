@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
     <?php require('includes/head.php');?>
     <link href="asset/css/contact.css" rel="stylesheet">
     <title>SOS CONSOLES</title>
 </head>
   <body>
   <?php require('includes/nav-bar.php'); ?> 
-    <section>
+    <section class="padding-top">
 
         <h2 id="send-note" class="text-center title-page display-4 my-5 playfair">Laissez un message</h2>
 

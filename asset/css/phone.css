@@ -1,7 +1,7 @@
 /* telephone-background entente */
 
 #background-phone-1 {
-    background: url('../asset/images/telephone.jpg');
+    background: url('../../images/telephone.jpg');
     height: auto;
 }
 
@@ -39,7 +39,7 @@
 /* style caption */
 
 .caption-style {
-    font-size: 1rem;
+    font-size: calc(0.6rem + 1vw);
     text-align: center;
     color: #000000;
     position: relative;
@@ -54,6 +54,7 @@
 
     .figure {
         width: 11rem;
+        margin-top: 1rem;
     }
 
     .img {
