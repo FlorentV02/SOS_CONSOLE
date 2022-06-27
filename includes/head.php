@@ -9,4 +9,4 @@ $webTitle = 'SOS CONSOLES - '; ?>
     <link href="./librery/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="asset/css/style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/icon/<?php print $icon ?>">
-    <?php include 'bdd.php';?>
+    <?php require_once 'bdd.php';?>

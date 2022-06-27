@@ -13,12 +13,13 @@
         <div id="block-formulaire" class="mb-5">
             <form id="formulaire" class="playfair" method="post" action="actions/send-note.php">
 
-            <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
+            <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.  '</p>';} ?>
 
                 <div class="d-flex justify-content-evenly">
                     <div class="mb-3 px-3 text-center w-100">
                         <label for="Name" class="form-label">
-                          Nom
+                          Nom : 
+
                         </label>
                         <input type="text" class="form-control form-style" id="Name" name="Name" placeholder="Votre nom" aria-describedby="NameHelp">
                     </div>

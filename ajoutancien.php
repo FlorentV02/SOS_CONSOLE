@@ -1,93 +1,34 @@
-<?php
-session_start(); 
-if (isset($_SESSION['count']) && ($_SESSION['count'] > 50)) {
-	header('Location: http://www.google.com/');
-} else {
-?> 
+
+
 <?php require('includes/head.php');
-     //require('includes/insert.php');
-     ?>
+      ?>
 <link href="asset/css/accueil.css" rel="stylesheet">
 <link href="asset/css/admin.css" rel="stylesheet">
+
+<title>SOS CONSOLES</title>
+
 </head>
 <body>
-	<?php
-	$password = 'motdepasse';
-	if ((isset($_POST['password']) && ($_POST['password'])) != $password) {
-		if (!isset($_SESSION['count'])) {
-			$_SESSION['count'] = 0;
-		} else {
-			$_SESSION['count']++;
-		}
-	?> 
-<h1>Connexion</h1>
-<form name="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
-<p><label for="password">Mot de passe</label> <input type="password" title="Saisissez le mot de passe" name="password" /></p> 
-<p><input type="submit" name="submit" value="Connexion" /></p> 
-</form>
-	<?php
-	} else {    
+<?php //require('includes/nav-bar.php'); ?>
+<section class="position-relative mt-5">
 
 
-        if (isset($_POST['submitNew']) AND !empty($_POST['titleNew']) AND !empty($_POST['txtNew'])){
 
-            $titleNew = $_POST['titleNew'];
-         $txtNew = $_POST['txtNew'];
-        
-            $error ="Les news ont étés modifiés";
-        
-        
-            $updateNew = $pdo->query("UPDATE `bloc_news` SET `texte` = '$txtNew' , `titre` = '$titleNew' WHERE `bloc_news`.`Id_Block_NEWS` = 1");
-        
-            $updateNew->execute();
-        
-        }
-        
-        else{
-            $error ="Une erreur est survenu";
-        }
-        
-        
-        // ajout image
-        
-        if(isset($_POST['submit'])) {
-        
-            $number = $_POST['Number'];
-            $title = $_POST['title'];
-            $txt = $_POST['txt'];
-        
-        
-            //$ImageName = str_replace(' ','-',strtolower($_FILES['image']['name'][0]));
-        
-            if(isset($_FILES['image'])){
-            $filename = $_FILES['image']['name'];
-            $tmpName = $_FILES['image']['tmp_name'];
-            $size = $_FILES['image']['size'];
-            $error = $_FILES['image']['error'];
-            
-            
-            echo $number;
-            $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
-            $extensions_arr = array("jpg","jpeg","png");
-        
-            move_uploaded_file($tmpName, './images/'.$filename );
-        
-            $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = '$filename '  WHERE `carouselle`.`Id_Carouselle` = $number");
-        
-            // excution de la requete
-        
-        
-            $updateImage->execute();
-            }
-        }
-        ?> 
-<h1 id="send-note" class="text-center title-page display-4 my-5 playfair">Modifier des blocs</h1>
+<?php  
+
+require('includes/insert.php');
+
+//$queryAppareil = $pdo->query()
+//$queryAppareil = "INSERT INTO `carouselle` (`Id_Carouselle`, `titre`, `texte`, `image`) VALUES (NULL, '$number', '$title', , '$txt' '$file')"; ?>
+
+
+<h1 id="send-note" class="text-center title-page display-4 my-5 playfair">Espace Administrateur</h1>
 
 
 <div id="block-formulaire" class="mb-5">
-    <form id="formulaire" class="playfair p-3" method="post" action="<?php $_SERVER['PHP_SELF']?>">
+    <form id="formulaire" class="playfair p-3" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
 
-    <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
+    <?php if(isset($errorMsg)){ echo $errorMsg ;} ?>
 
         <div class="mb-3 px-3 text-center w-100">
             <label for="exampleInputEmail1" class="form-label">
@@ -106,8 +47,8 @@ if (isset($_SESSION['count']) && ($_SESSION['count'] > 50)) {
         <p class="text-danger mr-3">Champs obligatoire *</p>
 
     </form>
-
     <?php echo $error; ?>
+    <div class="<?php echo $valid;?>"><?php echo $error; ?></div>
 
     <form method="post" action="">        
         <div class="d-flex justify-content-center">
@@ -135,7 +76,7 @@ if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
 
 
 <div id="block-formulaire" class="mb-5">
-    <form enctype="multipart/form-data" id="formulaire" class="playfair p-3" method="post" action="">
+    <form enctype="multipart/form-data" id="formulaire" class="playfair p-3" method="post" action="<?php echo$_SERVER['PHP_SELF'] ?>">
 
     <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>';} ?>
 
@@ -160,7 +101,7 @@ if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
             <div class="mb-3 px-3 text-center w-100">
             <label for="exampleFormControlFile1">Example file input</label>
             <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
-            <?php if(isset($errors['image'])){echo "<span class='text-danger'>" .$errors['image']. "</span>"; } ?>
+            <?php echo "<span class='text-danger'>" .$checkmessage. "</span>";  ?>
 
             </div>
         </div>
@@ -217,9 +158,9 @@ if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
       
 </div>
 </section>
-<?php 
-	}
-} 
-?>
+
+
+
 </body>
 </html>
+
