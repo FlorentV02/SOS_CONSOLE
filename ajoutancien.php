@@ -99,9 +99,9 @@ if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
         </div>
         <div>
             <div class="mb-3 px-3 text-center w-100">
-            <label for="exampleFormControlFile1">Example file input</label>
+            <label for="exampleFormControlFile1">Ajout image</label>
             <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
-            <?php echo "<span class='text-danger'>" .$checkmessage. "</span>";  ?>
+            <?php if(!empty($checkmessage)){echo "<span class='text-danger'>" .$checkmessage. "</span>";} else{}  ?>
 
             </div>
         </div>
@@ -140,7 +140,7 @@ if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
         </div>
         <div>
             <div class="mb-3 px-3 text-center w-100">
-            <label for="exampleFormControlFile1">Example file input</label>
+            <label for="exampleFormControlFile1">Fichier image</label>
             <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
             <?php if(isset($errors['image'])){echo "<span class='text-danger'>" .$errors['image']. "</span>"; } ?>
 

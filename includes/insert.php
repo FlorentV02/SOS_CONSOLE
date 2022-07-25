@@ -50,35 +50,40 @@ if(isset($_POST['submit'])) {
     
     
     
+    
     $check = getimagesize($_FILES["image"]["tmp_name"]);
+
+    //var_dump($check["mime"]);
     
     $target_dir = "./images/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
     $extensions_arr = array("image/jpg","image/jpeg","image/png");
 
-    var_dump($check['mime']);
+    $checkmessage = NULL;
 
-    if(in_array($check["mime"], $extensions_arr)){
-        $uploadOk = 1;
-        $checkmessage = "Ce fichier est " . $check["mime"] . ".";
-        move_uploaded_file($tmpName, $target_dir.$filename );
-        $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = '$filename '  WHERE `carouselle`.`Id_Carouselle` = $number");
-        
-        // excution de la requete
 
-        $updateImage->execute();
+    if(!empty($check)){
+        if((in_array($check["mime"], $extensions_arr))){
+            $checkmessage = "Ce fichier est " . $check["mime"] . ".";
+            move_uploaded_file($tmpName, $target_dir.$filename );
+            $updateImage = $pdo->query("UPDATE `carouselle` SET `titre` = '$title', `texte` = '$txt', `image` = '$filename '  WHERE `carouselle`.`Id_Carouselle` = $number");
+            
+            // excution de la requete
+    
+            $updateImage->execute();
+        }
+        else{
+            $checkmessage = "Ce n'est pas une image";
+        }
     }
+
     else{
         $checkmessage = "Ce n'est pas une image";
-        $uploadOk = 0;
     }
 
-    // Check if file already exists
-    if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-      }
+
+
     
     }
 }
