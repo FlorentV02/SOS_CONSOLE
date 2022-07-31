@@ -116,13 +116,6 @@ foreach ($resultat as $key => $variable){
 $pdf->Cell(95,10,"Total",1,0);
 $pdf->Cell(95,10,$global['total'],1,1);
 
-
-
-
-$pdf->Cell(95,10,"Total",1,0);
-$pdf->Cell(95,10,$global['total'].'€',1,1);
-
-
 $pdf->Output();
 
 

@@ -67,7 +67,7 @@
           ?>
 
 
-            <div class="d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center mb-5">
                 <div class="flex-column">
                 <form action="devis.php" method="post">
                   <?php $i=0;
@@ -83,13 +83,15 @@
                 </div>
                 <div><img src ="images/<?php echo $ligne['image_piece']?>" alt="Appareil" id="img-piece" class="my-3"/></div>
               </div>
-              <div class="d-flex justify-content-center">
+
+          </div>
+
+          <div class="d-flex justify-content-center mt-4 pb-5">
                 <button class="btn-devis btn-search btn-outline-success mt-3 link-btn link-success" 
                 type="submit" name="envoyer">Envoyer</button>
                 </form>
               </div>                
 
-          </div>
 
         </div>
         </main>
