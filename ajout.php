@@ -12,13 +12,13 @@ if (isset($_SESSION['count']) && ($_SESSION['count'] > 50)) {
 </head>
 <body>
 	<?php
-	$password = 'motdepasse';
-	if ((isset($_POST['password']) && ($_POST['password'])) != $password) {
-		if (!isset($_SESSION['count'])) {
-			$_SESSION['count'] = 0;
-		} else {
-			$_SESSION['count']++;
-		}
+	//$password = 'motdepasse';
+	//if ((isset($_POST['password']) && ($_POST['password'])) != $password) {
+		//if (!isset($_SESSION['count'])) {
+			//$_SESSION['count'] = 0;
+		//} else {
+			//$_SESSION['count']++;
+		//}
 	?> 
 <h1>Connexion</h1>
 <form name="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
@@ -26,7 +26,7 @@ if (isset($_SESSION['count']) && ($_SESSION['count'] > 50)) {
 <p><input type="submit" name="submit" value="Connexion" /></p> 
 </form>
 	<?php
-	} else {    
+//} else {    
 
 
         if (isset($_POST['submitNew']) AND !empty($_POST['titleNew']) AND !empty($_POST['txtNew'])){
@@ -219,7 +219,7 @@ if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
 </section>
 <?php 
 	}
-} 
+//} 
 ?>
 </body>
 </html>
