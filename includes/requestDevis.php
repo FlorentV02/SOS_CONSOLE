@@ -16,7 +16,7 @@
             if($_POST['piece1'] == "" AND $_POST['piece2'] == "" AND $_POST['piece3'] == "" AND $_POST['piece4'] == "" 
             AND $_POST['piece5'] == "" AND $_POST['piece6'] == "" AND $_POST['piece7'] == "" AND $_POST['piece8'] == ""
             AND $_POST['piece9'] == "" AND $_POST['piece10'] == ""){
-                header("Location: http://127.0.0.1/dev/Stage/SOS_CONSOLES/inde.php");
+                header("Location: http://127.0.0.1/dev/Stage/SOS_CONSOLES/index.php");
                 }
 
                 // Création de variable qui est par défaut à "0" si les checks box sont non rempli. 

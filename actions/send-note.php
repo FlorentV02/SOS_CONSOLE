@@ -20,21 +20,18 @@ if (empty($_POST['Name'])){
     $_POST['Name'] = "Non renseigné";
 }
 //<br>Information complémentaire : <br> Nom utilisateur :' .$_POST['Name']. '<br> Prénom :'. $_POST['FirstName'] . $_POST['Telephone'].''
-    $message = '<h1>Votre devis</h1>
+    $message = '<h1>Votre message</h1>
     <p><b>Email : </b>' . $_POST['Email'] . '<br>
     <b>Message : </b>' . htmlspecialchars($_POST['Message']) . '</p>' . '<br><h2>Information complémentaire</h2>
      <br> <span>Nom utilisateur : ' .$_POST['Name']. '</span><br><span>Prénom :'. $_POST['FirstName'] 
      .'</span><br><span> Numéro de téléphone : ' . $_POST['Telephone'].'</span>' ;
-    echo '<p> email'. $_POST['Email'] .'<br> nom    ' . $_POST['Name'] . '<br> prénom ' . $_POST['FirstName'] . '<br>' . $_POST['object'] .'<br>'. $_POST['Telephone'] . '</p>';
-
-
 
     $retour = mail('florviev@gmail.com', 'Envoi depuis page Contact', $message, $entete);
     if($retour)
-        echo '<p>Votre message a bien été envoyé.</p> ';
+        echo '<p>Votre message a bien été envoyé. </p> ';
         //echo '</br> Numéro de Téléphone : ' .  . '' ;
         else{
-            echo 'Message non envoyé';
+            echo 'Message non envoyé ';
 
         }
 }
@@ -42,11 +39,6 @@ if (empty($_POST['Name'])){
 else{
     echo 'Erreur';
 }
-
-var_dump($entete);
-var_dump($message);
-//var_dump($_POST['Name']);
-
 
 ?>
 

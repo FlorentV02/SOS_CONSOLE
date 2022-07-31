@@ -1,7 +1,5 @@
-<?php 
-require('../includes/bdd.php');
-require('../librery/makefont/makefont.php');
-//MakeFont('C:\xampp\htdocs\dev\Stage\SOS_CONSOLES\librery\font\PlayfairDisplay-VariableFont_wght.ttf','cp1252');
+<?php
+
 if($_POST['piece1'] == "" AND $_POST['piece2'] == "" AND $_POST['piece3'] == "" AND $_POST['piece4'] == "" 
 AND $_POST['piece5'] == "" AND $_POST['piece6'] == "" AND $_POST['piece7'] == "" AND $_POST['piece8'] == ""
 AND $_POST['piece9'] == "" AND $_POST['piece10'] == ""){
@@ -75,48 +73,6 @@ $number_of_products = $query->rowCount();
 
 $resultat = $query->fetchAll();
 $global = $query1->fetch(PDO::FETCH_ASSOC);
-
-require('../librery/fpdf.php');
-
-
-
-$pdf = new FPDF();
-$pdf->AddPage();
-
-// addFont
-$fontName = "PlayfairDisplay-Regular";
-$pdf->AddFont($fontName,'','PlayfairDisplay-VariableFont_wght.php', true);
-$pdf->SetFont($fontName,'',16,);
-
-
-$pdf->Cell(0,10,"Votre devis de : " . $rappel['nom'],1,1,'B');
-$pdf->Cell(95,10,"Nom ",1,0);
-$pdf->Cell(95,10,"Prix",1,1);
-
-
-
-foreach ($resultat as $key => $variable){ 
-    
-    $pdf->Cell(95,10,$resultat[$key]['type'],1,0);
-    $pdf->Cell(95,10,$resultat[$key]['prix'] . '€',1,1);
-
-    $htmlTable='<TABLE>
-    <TR>
-    <TD>Name:</TD>
-    <TD>test</TD>
-    </TR>
-    <TR>
-    <TD>Email:</TD>
-    <TD>test</TD>
-    </TR>
-    </TABLE>';
-
-}
-
-$pdf->Cell(95,10,"Total",1,0);
-$pdf->Cell(95,10,$global['total'],1,1);
-
-$pdf->Output();
 
 
 ?>
